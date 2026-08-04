@@ -1,0 +1,9 @@
+# `unrs-resolver` é o resolvedor nativo do eslint-config-next e precisa do
+# postinstall para baixar o binário da plataforma.
+#
+# `sharp` fica bloqueado de propósito: os binários vêm dos pacotes opcionais
+# `@img/sharp-*`, e liberar o script só faz o pnpm tentar (e falhar) compilar a
+# partir do fonte. Na Vercel o sharp é fornecido pela própria plataforma.
+allowBuilds:
+  sharp: false
+  unrs-resolver: true
