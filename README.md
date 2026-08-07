@@ -1,6 +1,6 @@
-# Sabrina House Cleaning
+# Sabrina Cleaning Service
 
-Site institucional de um serviço de limpeza residencial na Bay Area / San Francisco. O objetivo único do site é **gerar pedidos de orçamento por SMS**. Layout, copy, CTAs e SEO servem a isso.
+Site institucional de um serviço de limpeza residencial em Contra Costa e no East Bay (Califórnia). O objetivo único do site é **gerar pedidos de orçamento por SMS**. Layout, copy, CTAs e SEO servem a isso.
 
 - **Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · pnpm
 - **Deploy:** Vercel
@@ -60,7 +60,7 @@ i18n/
 content/                     dados do negócio e copy longa
   site.ts                    NAP, telefone, horário, redes, flags. TODOS os placeholders vivem aqui
   services.ts                4 serviços + copy longa das páginas (inglês)
-  cities.ts                  7 cidades + copy longa das páginas (inglês)
+  cities.ts                  19 cidades + copy longa das páginas (inglês, sem foto)
   about.ts                   história da Sabrina (vazia até ela escrever)
   reviews.ts                 depoimentos reais (vazio)
   navigation.ts  labels.ts
@@ -91,7 +91,7 @@ Se você esquecer de traduzir, **o `pnpm build` quebra**. `pt` e `es` são tipad
 
 ### Copy longa das páginas de SEO
 
-As páginas de serviço individual (`/services/deep-cleaning`) e de cidade (`/areas/san-francisco`) existem **apenas em inglês**, que é onde está o tráfego de busca. Ninguém pesquisa "limpeza em Burlingame" em português. A copy delas fica em `content/services.ts` e `content/cities.ts`, não no dicionário.
+As páginas de serviço individual (`/services/deep-cleaning`) e de cidade (`/areas/san-francisco`) existem **apenas em inglês**, que é onde está o tráfego de busca. Ninguém pesquisa "limpeza em Walnut Creek" em português. A copy delas fica em `content/services.ts` e `content/cities.ts`, não no dicionário.
 
 Cada cidade tem um ângulo próprio (arquitetura, clima, perfil de morador) porque página de cidade genérica é exatamente o que o Google trata como conteúdo duplicado.
 
@@ -105,7 +105,7 @@ Telefone, e-mail, horário, endereço, redes sociais e domínio ficam **só** em
 
 | Idioma | URL | Páginas |
 | --- | --- | --- |
-| Inglês (canônico) | `/`, `/services`, `/areas/san-francisco` | todas |
+| Inglês (canônico) | `/`, `/services`, `/areas/concord` | todas |
 | Português | `/pt`, `/pt/services` | home e institucionais |
 | Espanhol | `/es`, `/es/services` | home e institucionais |
 
@@ -115,12 +115,12 @@ O `proxy.ts` faz o roteamento:
 - `/en/qualquer-coisa` → redirect 308 para `/qualquer-coisa`, para não existir URL duplicada indexável.
 - `/pt/...` e `/es/...` batem direto na árvore de rotas.
 
-Páginas que só existem em inglês usam `dynamicParams = false`, então `/pt/areas/san-francisco` devolve **404 limpo** em vez de conteúdo duplicado. O seletor de idioma sabe disso: a partir de uma página EN-only, trocar para PT leva à home em português, não a um link quebrado.
+Páginas que só existem em inglês usam `dynamicParams = false`, então `/pt/areas/concord` devolve **404 limpo** em vez de conteúdo duplicado. O seletor de idioma sabe disso: a partir de uma página EN-only, trocar para PT leva à home em português, não a um link quebrado.
 
 ### Adicionar uma cidade
 
 1. Adicione a entrada em `content/cities.ts` com copy própria (ângulo, bairros, ZIPs, FAQ local).
-2. Adicione a imagem em `public/images/areas/` e registre o prompt em `ASSETS.md`.
+2. Pronto. Páginas de cidade não usam foto, então não há asset para gerar.
 
 A página, o sitemap, o rodapé, o hub de áreas e o JSON-LD se atualizam sozinhos.
 
@@ -194,11 +194,10 @@ Tudo abaixo está com placeholder no código, marcado com `TODO CLIENTE` em `con
 
 | Item | Placeholder atual | Onde trocar |
 | --- | --- | --- |
-| **Telefone para SMS e ligação** | `+1 (555) 000-0000` | `content/site.ts` → `phone` |
-| **E-mail de contato** | `hello@sabrinahousecleaning.com` | `content/site.ts` → `email` |
-| **Domínio final** | `https://sabrinahousecleaning.com` | `content/site.ts` → `url` |
+| **E-mail de contato** | `hello@sabrinacleaningservice.com` | `content/site.ts` → `email` |
+| **Domínio final** | `https://sabrinacleaningservice.com` | `content/site.ts` → `url` |
 
-> ⚠️ O site antigo (`sabrinacleaning.lovable.app`) é de **Orlando, Flórida**, com telefone `(407) 853-9402`. Aproveitei o tom de voz e a lista de serviços de lá, mas **nada de NAP, cidades ou prova social** foi reaproveitado, porque não se aplica à Bay Area.
+> ⚠️ O site antigo (`sabrinacleaning.lovable.app`) é de **Orlando, Flórida**. O telefone `(407) 853-9402` a cliente confirmou como oficial: ela manteve o celular ao mudar. Cidades e prova social de lá **não** foram reaproveitadas, porque não se aplicam a Contra Costa.
 
 ### Precisam de confirmação antes de ir ao ar
 
@@ -206,9 +205,9 @@ Tudo abaixo está com placeholder no código, marcado com `TODO CLIENTE` em `con
 | --- | --- | --- |
 | **Seguro / bonded** | Desligado. "Licensed & insured" é afirmação legal, e publicar sem ter é risco real. A frase já está pronta e traduzida; é só virar a flag. | `content/site.ts` → `claims.licensedAndInsured` |
 | **Background check da equipe** | Desligado, mesma lógica. | `content/site.ts` → `claims.backgroundChecked` |
-| **Nome comercial** | Assumi **"Sabrina House Cleaning"** (o da logo). O site antigo usava "Sabrina Mesquita Cleaning Service". | `content/site.ts` → `legalName` |
+| **Razão social** | A cliente confirmou o nome comercial **Sabrina Cleaning Service**. Falta saber se a razão social registrada é a mesma. | `content/site.ts` → `legalName` |
 | **Horário de atendimento** | Assumi segunda a sábado, 8h–18h. | `content/site.ts` → `hours` |
-| **Endereço / cidade-base** | Assumi South San Francisco, CA 94080 (usado no `LocalBusiness`). | `content/site.ts` → `address` |
+| **Endereço / cidade-base** | Assumi Concord, CA 94520, com base no mapa que a cliente mandou. Precisa bater com o endereço do Google Business. | `content/site.ts` → `address` |
 
 ### Prova social
 
@@ -231,7 +230,7 @@ Tudo abaixo está com placeholder no código, marcado com `TODO CLIENTE` em `con
 
 | Item | Decisão |
 | --- | --- |
-| **Cidades atendidas** | As 7 do briefing: San Francisco, Daly City, South San Francisco, San Mateo, Burlingame, Millbrae, Pacifica. O concorrente lista 34; se ela atende mais, cada cidade nova é uma página a mais de SEO. |
+| **Cidades atendidas** | As 19 da lista manuscrita da cliente, todas com página própria. Se ela atender mais, cada cidade nova é uma página a mais de SEO. |
 | **Preços** | Nenhum valor exposto. A seção vende a política de "free estimate" em vez de fingir uma tabela. |
 | **Idiomas nas páginas de SEO** | Cidades e serviços individuais só em inglês, por decisão de escopo. |
 

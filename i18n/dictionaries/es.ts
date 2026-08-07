@@ -7,9 +7,9 @@ import type { Dictionary } from "../types";
 const es: Dictionary = {
   meta: {
     home: {
-      title: "Limpieza de casas en San Francisco y el Área de la Bahía",
+      title: "Limpieza de casas en Contra Costa y el East Bay",
       description:
-        "Limpieza recurrente, profunda y de mudanza en San Francisco y la Península. Precio cerrado y siempre la misma persona. Escríbenos por SMS para un presupuesto gratis.",
+        "Limpieza recurrente, profunda y de mudanza en Contra Costa, el East Bay y San Francisco. Precio cerrado y siempre la misma persona. Escríbenos por SMS para un presupuesto gratis.",
     },
     services: {
       title: "Servicios de limpieza",
@@ -19,12 +19,12 @@ const es: Dictionary = {
     areas: {
       title: "Zonas que atendemos",
       description:
-        "Limpieza de casas en San Francisco, Daly City, South San Francisco, San Mateo, Burlingame, Millbrae y Pacifica. Mándanos tu código postal por SMS.",
+        "Limpieza de casas en Concord, Walnut Creek, Danville, Lafayette, Orinda, Oakland, Berkeley, San Francisco, Vallejo, Napa y todo Contra Costa. Mándanos tu código postal por SMS.",
     },
     about: {
       title: "Sobre Sabrina",
       description:
-        "Un negocio pequeño y cuidadoso de limpieza en San Francisco y la Península. Conoce a quien de verdad va a limpiar tu casa.",
+        "Un negocio pequeño y cuidadoso de limpieza en Contra Costa y el East Bay. Conoce a quien de verdad va a limpiar tu casa.",
     },
     faq: {
       title: "Preguntas frecuentes",
@@ -38,11 +38,11 @@ const es: Dictionary = {
     },
     privacy: {
       title: "Política de privacidad",
-      description: "Cómo Sabrina House Cleaning trata la información que compartes con nosotros.",
+      description: "Cómo Sabrina Cleaning Service trata la información que compartes con nosotros.",
     },
     terms: {
       title: "Términos del servicio",
-      description: "Las condiciones que aplican a los servicios contratados con Sabrina House Cleaning.",
+      description: "Las condiciones que aplican a los servicios contratados con Sabrina Cleaning Service.",
     },
   },
 
@@ -75,7 +75,7 @@ const es: Dictionary = {
   },
 
   hero: {
-    eyebrow: "San Francisco y la Península",
+    eyebrow: "Contra Costa y el East Bay",
     titleLead: "Una casa que se siente",
     titleAccent: "como nueva",
     titleTail: "cada semana.",
@@ -98,7 +98,7 @@ const es: Dictionary = {
   about: {
     eyebrow: "Nosotros",
     title: "Un negocio pequeño, a propósito",
-    lead: "Sabrina House Cleaning la lleva su propia dueña. No es una limitación por la que pidamos disculpas: es justo lo que mantiene el trabajo parejo.",
+    lead: "Sabrina Cleaning Service la lleva su propia dueña. No es una limitación por la que pidamos disculpas: es justo lo que mantiene el trabajo parejo.",
     intro: {
       one: "Cuando contratas a una empresa grande, en la práctica contratas a un despachador. Llega quien esté libre esa mañana, trabaja con una lista genérica y quizá no vuelva nunca. Cuando nos contratas a nosotros, contratas a la persona que va a estar parada en tu cocina.",
       two: "Ese es todo el modelo. Mantenemos la lista de clientes lo bastante corta para que la misma persona vuelva a las mismas casas semana tras semana y las aprenda de verdad: qué estante no se toca, qué perro le ladra a la aspiradora, qué baño siempre necesita diez minutos más.",
@@ -123,9 +123,9 @@ const es: Dictionary = {
       },
     },
     storyTitle: "En palabras de Sabrina",
-    photoAlt: "Sabrina, dueña de Sabrina House Cleaning, en una casa del Área de la Bahía",
+    photoAlt: "Sabrina, dueña de Sabrina Cleaning Service, en una casa del Área de la Bahía",
     areaTitle: "Dónde trabajamos",
-    areaBody: "San Francisco y toda la Península, incluyendo Daly City, South San Francisco, Pacifica, Millbrae, Burlingame y San Mateo.",
+    areaBody: "Por todo Contra Costa y el East Bay, desde Orinda y Lafayette pasando por Concord y Walnut Creek hasta Pittsburg, más Oakland, Berkeley, San Francisco y al norte Benicia, Vallejo y Napa.",
     ctaTitle: "¿Quieres saber si encajamos?",
     ctaBody: "Mándanos tu código postal por SMS y una frase sobre tu casa. Si no somos la opción correcta, te lo decimos.",
   },
@@ -223,9 +223,9 @@ const es: Dictionary = {
 
   areas: {
     eyebrow: "Dónde limpiamos",
-    title: "San Francisco y toda la Península",
+    title: "Contra Costa, el East Bay y hasta Napa",
     subtitle:
-      "Desde el Sunset y Noe Valley pasando por Daly City y South San Francisco, hasta San Mateo y Burlingame.",
+      "Desde Orinda y Lafayette pasando por Concord y Walnut Creek, hasta Pittsburg y el Delta, cruzando el puente a Oakland, Berkeley y San Francisco, y al norte hasta Benicia, Vallejo y Napa.",
     note: "¿No sabes si llegamos a tu calle? Mándanos tu código postal por SMS y te respondemos enseguida.",
     viewCity: "Limpieza de casas en",
     allAreas: "Ver todas las zonas",
@@ -235,7 +235,7 @@ const es: Dictionary = {
   testimonials: {
     eyebrow: "Clientes",
     title: "Lo que dicen",
-    subtitle: "Opiniones de casas en San Francisco y la Península.",
+    subtitle: "Opiniones de casas en Contra Costa y el East Bay.",
     empty: {
       title: "Estamos reuniendo las opiniones",
       body: "En vez de publicar testimonios inventados, dejamos este espacio vacío hasta que lo llenen clientes reales. Si quieres hablar con alguien de tu barrio a quien ya limpiamos, solo pídelo y te ponemos en contacto.",
@@ -276,7 +276,7 @@ const es: Dictionary = {
       },
       areas: {
         q: "¿Qué zonas cubren?",
-        a: "San Francisco y la Península, incluyendo Daly City, South San Francisco, Pacifica, Millbrae, Burlingame y San Mateo. Si estás justo fuera de ahí, escríbenos igual: muchas veces lo podemos acomodar.",
+        a: "Contra Costa y el East Bay. Concord, Walnut Creek, Clayton Valley, Pacheco, Martinez, Lafayette, Orinda, Moraga, Alamo, Danville, San Ramon, Bay Point y Pittsburg, más Oakland, Berkeley y San Francisco, y al norte Benicia, Vallejo y Napa. Si estás justo fuera de ahí, escríbenos igual: muchas veces lo podemos acomodar.",
       },
       home: {
         q: "¿Necesito estar en casa durante la limpieza?",
@@ -309,7 +309,7 @@ const es: Dictionary = {
     title: "Pongamos tu casa en el calendario",
     body: "Mándanos tu código postal por SMS y te devolvemos un precio cerrado, normalmente en menos de una hora y siempre gratis.",
     imageAlt:
-      "Mascota ilustrada de Sabrina House Cleaning: una profesional sonriente con uniforme blanco y negro sosteniendo un plumero",
+      "Mascota ilustrada de Sabrina Cleaning Service: una profesional sonriente con uniforme blanco y negro sosteniendo un plumero",
   },
 
   quoteForm: {
@@ -366,7 +366,7 @@ const es: Dictionary = {
 
   footer: {
     blurb:
-      "Limpieza de casas en San Francisco y la Península. Recurrente, profunda, mudanza y post-obra.",
+      "Limpieza de casas en Contra Costa, el East Bay, San Francisco y Napa. Recurrente, profunda, mudanza y post-obra.",
     servicesTitle: "Servicios",
     companyTitle: "Empresa",
     contactTitle: "Contacto",

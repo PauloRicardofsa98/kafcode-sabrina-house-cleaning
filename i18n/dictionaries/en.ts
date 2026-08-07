@@ -8,9 +8,9 @@
 const en = {
   meta: {
     home: {
-      title: "House Cleaning in San Francisco & the Bay Area",
+      title: "House Cleaning in Contra Costa & the East Bay",
       description:
-        "Recurring, deep and move-out house cleaning across San Francisco and the Peninsula. Flat pricing, same cleaner every visit. Text us for a free quote.",
+        "Recurring, deep and move-out house cleaning across Contra Costa, the East Bay and San Francisco. Flat pricing, same cleaner every visit. Text us for a free quote.",
     },
     services: {
       title: "Cleaning Services",
@@ -20,12 +20,12 @@ const en = {
     areas: {
       title: "Areas We Serve",
       description:
-        "House cleaning in San Francisco, Daly City, South San Francisco, San Mateo, Burlingame, Millbrae and Pacifica. Text us your ZIP code for a free quote.",
+        "House cleaning in Concord, Walnut Creek, Danville, Lafayette, Orinda, Oakland, Berkeley, San Francisco, Vallejo, Napa and across Contra Costa. Text us your ZIP code.",
     },
     about: {
       title: "About Sabrina",
       description:
-        "A small, careful house cleaning business serving San Francisco and the Peninsula. Meet the person who will actually be cleaning your home.",
+        "A small, careful house cleaning business serving Contra Costa and the East Bay. Meet the person who will actually be cleaning your home.",
     },
     faq: {
       title: "Frequently Asked Questions",
@@ -39,11 +39,11 @@ const en = {
     },
     privacy: {
       title: "Privacy Policy",
-      description: "How Sabrina House Cleaning handles the information you share with us.",
+      description: "How Sabrina Cleaning Service handles the information you share with us.",
     },
     terms: {
       title: "Terms of Service",
-      description: "The terms that apply to cleaning services booked with Sabrina House Cleaning.",
+      description: "The terms that apply to cleaning services booked with Sabrina Cleaning Service.",
     },
   },
 
@@ -78,7 +78,7 @@ const en = {
   },
 
   hero: {
-    eyebrow: "San Francisco & the Peninsula",
+    eyebrow: "Contra Costa & the East Bay",
     titleLead: "A home that feels",
     titleAccent: "brand new",
     titleTail: "every week.",
@@ -106,7 +106,7 @@ const en = {
   about: {
     eyebrow: "About",
     title: "A small business, on purpose",
-    lead: "Sabrina House Cleaning is owner-run. That isn't a limitation we're apologising for. It's the reason the work stays consistent.",
+    lead: "Sabrina Cleaning Service is owner-run. That isn't a limitation we're apologising for. It's the reason the work stays consistent.",
     intro: {
       one: "When you hire a large agency you are, in practice, hiring a dispatcher. Whoever is free that morning shows up, works from a generic checklist, and may never come back. When you hire us, you are hiring the person who will be standing in your kitchen.",
       two: "That's the whole model. We keep the client list small enough that the same person can return to the same homes week after week and learn them properly. Which shelf is off-limits, which dog barks at the vacuum, which bathroom always needs the extra ten minutes.",
@@ -131,9 +131,9 @@ const en = {
       },
     },
     storyTitle: "In Sabrina's words",
-    photoAlt: "Sabrina, owner of Sabrina House Cleaning, in a Bay Area home",
+    photoAlt: "Sabrina, owner of Sabrina Cleaning Service, in a Bay Area home",
     areaTitle: "Where we work",
-    areaBody: "San Francisco and down the Peninsula, including Daly City, South San Francisco, Pacifica, Millbrae, Burlingame and San Mateo.",
+    areaBody: "Across Contra Costa and the East Bay, from Orinda and Lafayette through Concord and Walnut Creek out to Pittsburg, plus Oakland, Berkeley, San Francisco and north to Benicia, Vallejo and Napa.",
     ctaTitle: "Want to know if we're a fit?",
     ctaBody: "Text us your ZIP code and a sentence about your home. If we're not the right choice, we'll say so.",
   },
@@ -231,9 +231,9 @@ const en = {
 
   areas: {
     eyebrow: "Where we clean",
-    title: "San Francisco and down the Peninsula",
+    title: "Across Contra Costa, the East Bay and up to Napa",
     subtitle:
-      "From the Sunset and Noe Valley through Daly City and South San Francisco, all the way to San Mateo and Burlingame.",
+      "From Orinda and Lafayette through Concord and Walnut Creek, out to Pittsburg and the Delta, across the bridge to Oakland, Berkeley and San Francisco, and north to Benicia, Vallejo and Napa.",
     note: "Not sure if your street is in range? Text us your ZIP code and we'll answer straight away.",
     viewCity: "House cleaning in",
     allAreas: "See all areas",
@@ -243,7 +243,7 @@ const en = {
   testimonials: {
     eyebrow: "Clients",
     title: "What people say",
-    subtitle: "Reviews from homes across San Francisco and the Peninsula.",
+    subtitle: "Reviews from homes across Contra Costa and the East Bay.",
     empty: {
       title: "We're collecting reviews right now",
       body: "Rather than publish something invented, we've left this space empty until real clients fill it. If you'd like to hear from someone we already clean for in your neighborhood, just ask and we'll put you in touch.",
@@ -284,7 +284,7 @@ const en = {
       },
       areas: {
         q: "Which areas do you cover?",
-        a: "San Francisco and the Peninsula, including Daly City, South San Francisco, Pacifica, Millbrae, Burlingame and San Mateo. If you're just outside that, text us anyway; we can often make it work.",
+        a: "Contra Costa and the East Bay. Concord, Walnut Creek, Clayton Valley, Pacheco, Martinez, Lafayette, Orinda, Moraga, Alamo, Danville, San Ramon, Bay Point and Pittsburg, plus Oakland, Berkeley and San Francisco, and north to Benicia, Vallejo and Napa. If you're just outside that, text us anyway; we can often make it work.",
       },
       home: {
         q: "Do I need to be home during the cleaning?",
@@ -317,7 +317,7 @@ const en = {
     title: "Let's get your home on the calendar",
     body: "Text us your ZIP code and we'll send a flat price back, usually within the hour and always free.",
     imageAlt:
-      "Sabrina House Cleaning illustrated mascot: a smiling cleaner in a black and white uniform holding a feather duster",
+      "Sabrina Cleaning Service illustrated mascot: a smiling cleaner in a black and white uniform holding a feather duster",
   },
 
   quoteForm: {
@@ -375,7 +375,7 @@ const en = {
 
   footer: {
     blurb:
-      "House cleaning for San Francisco and the Peninsula. Recurring, deep, move-in/move-out and post-construction.",
+      "House cleaning across Contra Costa, the East Bay, San Francisco and Napa. Recurring, deep, move-in/move-out and post-construction.",
     servicesTitle: "Services",
     companyTitle: "Company",
     contactTitle: "Contact",

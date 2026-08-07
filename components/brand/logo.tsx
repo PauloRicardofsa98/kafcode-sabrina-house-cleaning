@@ -49,7 +49,7 @@ export function Logo({
       {/*
         O nome acessível vem do texto oculto, e a versão visível é escondida da
         árvore de acessibilidade. Sem isso, o nome calculado seria
-        "SabrinaHouse Cleaning" (as duas linhas coladas) e não bateria com o
+        "SabrinaCleaning Service" (as duas linhas coladas) e não bateria com o
         rótulo visível.
       */}
       <span className="sr-only">{site.name}</span>
@@ -76,7 +76,7 @@ export function Logo({
               tone === "dark" ? "text-ink-soft" : "text-white/70",
             )}
           >
-            House Cleaning
+            Cleaning Service
           </span>
         </span>
       </span>

@@ -43,7 +43,7 @@ export const services: Service[] = [
     page: {
       metaTitle: "Recurring House Cleaning: Weekly, Bi-Weekly & Monthly",
       metaDescription:
-        "Weekly, bi-weekly or monthly house cleaning across San Francisco and the Peninsula. Same cleaner every visit, flat pricing, supplies included. Free quote by text.",
+        "Weekly, bi-weekly or monthly house cleaning across Contra Costa and the East Bay. Same cleaner every visit, flat pricing, supplies included. Free quote by text.",
       h1: "Recurring house cleaning",
       lead: "The same person, on the same day, doing the same thorough job, so your home never gets far enough behind to need rescuing.",
       intro: [
@@ -215,7 +215,7 @@ export const services: Service[] = [
     imageAlt:
       "Empty apartment with bare floors and open closets being cleaned before a move-out inspection",
     page: {
-      metaTitle: "Move-In & Move-Out Cleaning in San Francisco & the Peninsula",
+      metaTitle: "Move-In & Move-Out Cleaning in Contra Costa & the East Bay",
       metaDescription:
         "Empty-home cleaning built around the deposit inspection: inside cabinets, appliances, closets, blinds and tracks. Flat price, quoted by text, fast turnaround.",
       h1: "Move-in and move-out cleaning",

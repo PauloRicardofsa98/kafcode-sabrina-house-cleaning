@@ -11,7 +11,7 @@ import { JsonLd } from "@/components/ui/json-ld";
 import { PageHero } from "@/components/ui/page-hero";
 import { Section } from "@/components/ui/section";
 import { aboutPhoto, aboutStory } from "@/content/about";
-import { cities } from "@/content/cities";
+import { cityRegions, getCities } from "@/content/cities";
 import { smsHref } from "@/content/site";
 import { isLocale, locales, localizedHref } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -150,17 +150,22 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 {dict.about.areaTitle}
               </h2>
               <p className="text-lg leading-relaxed text-ink-soft">{dict.about.areaBody}</p>
-              <ul className="mt-2 flex flex-wrap gap-2.5">
-                {cities.map((city) => (
-                  <li
-                    key={city.slug}
-                    className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-line bg-white px-4 py-2 text-sm text-ink"
-                  >
-                    <PinIcon className="h-3.5 w-3.5 text-blue" />
-                    {city.name}
-                  </li>
+              {/* Agrupado por região: 19 chips soltos viram ruído visual. */}
+              <dl className="mt-2 flex flex-col gap-4">
+                {cityRegions.map((region) => (
+                  <div key={region.label} className="flex flex-col gap-1">
+                    <dt className="flex items-center gap-2 text-xs font-semibold tracking-[0.14em] text-blue uppercase">
+                      <PinIcon className="h-3.5 w-3.5" />
+                      {region.label}
+                    </dt>
+                    <dd className="text-base text-ink-soft">
+                      {getCities(region.slugs)
+                        .map((city) => city.name)
+                        .join(", ")}
+                    </dd>
+                  </div>
                 ))}
-              </ul>
+              </dl>
             </div>
 
             <div className="flex flex-col justify-center gap-5 rounded-[var(--radius-card)] border border-line bg-white p-8 sm:p-10">

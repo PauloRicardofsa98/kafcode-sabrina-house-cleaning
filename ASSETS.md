@@ -1,6 +1,8 @@
-# Assets do Sabrina House Cleaning
+# Assets do Sabrina Cleaning Service
 
 Lista completa das imagens que o site referencia. **O código já aponta para os caminhos finais**, então tudo o que estiver faltando aparece quebrado até o arquivo existir. Isso é esperado, não é bug.
+
+As páginas de cidade **não têm foto**: são 19 cidades, e gerar uma imagem crível para cada uma custaria mais do que entrega. O que sustenta essas páginas é o texto local.
 
 Cada entrada tem nome, caminho exato, dimensões e um **prompt autossuficiente** pronto para colar no ChatGPT. Os prompts repetem estilo, paleta e iluminação de propósito: cada um funciona sozinho, sem você precisar ler o resto do arquivo.
 
@@ -13,14 +15,7 @@ Cada entrada tem nome, caminho exato, dimensões e um **prompt autossuficiente**
 | 3 | Serviço: Deep | `public/images/services/deep-cleaning-kitchen-san-francisco.webp` | ✅ pronto |
 | 4 | Serviço: Move in/out | `public/images/services/move-out-cleaning-empty-apartment.webp` | ✅ pronto |
 | 5 | Serviço: Post-construction | `public/images/services/post-construction-cleaning-remodel.webp` | ✅ pronto |
-| 6 | Cidade: San Francisco | `public/images/areas/house-cleaning-san-francisco-victorian.webp` | ✅ pronto |
-| 7 | Cidade: Daly City | `public/images/areas/house-cleaning-daly-city-westlake.webp` | ✅ pronto |
-| 8 | Cidade: South San Francisco | `public/images/areas/house-cleaning-south-san-francisco-hillside.webp` | ✅ pronto |
-| 9 | Cidade: San Mateo | `public/images/areas/house-cleaning-san-mateo-family-home.webp` | ✅ pronto |
-| 10 | Cidade: Burlingame | `public/images/areas/house-cleaning-burlingame-craftsman.webp` | ⬜ gerar |
-| 11 | Cidade: Millbrae | `public/images/areas/house-cleaning-millbrae-hillside-home.webp` | ✅ pronto |
-| 12 | Cidade: Pacifica | `public/images/areas/house-cleaning-pacifica-coastal-home.webp` | ✅ pronto |
-| 13 | Open Graph | `public/images/og/sabrina-house-cleaning-og.jpg` | ✅ pronto |
+| 6 | Open Graph | `public/images/og/sabrina-house-cleaning-og.jpg` | ✅ pronto |
 | · | Logo completa | `public/images/sabrina-house-cleaning-logo-full.png` | ✅ pronto |
 | · | Mascote recortada | `public/images/sabrina-house-cleaning-mascot.webp` | ✅ pronto |
 | · | Favicon SVG | `app/icon.svg` | ✅ pronto |
@@ -43,7 +38,6 @@ O script varre `public/`, descobre pelo diretório qual formato, tamanho e quali
 | --- | --- |
 | `public/images/*.png` | WebP, máx. 2400px de largura, q82 |
 | `public/images/services/*.png` | WebP, máx. 1600px, q82 |
-| `public/images/areas/*.png` | WebP, máx. 1600px, q82 |
 | `public/images/og/*.png` | JPEG **exatamente** 1200×630 (corta pelo centro), q86 |
 | `public/images/icons/*` | não toca, porque o PWA exige PNG |
 | `sabrina-house-cleaning-logo-full.png` | não toca, porque o JSON-LD referencia esse PNG |
@@ -117,86 +111,7 @@ Photorealistic interior photography of a completely empty apartment with bare fl
 Photorealistic interior photography of a freshly remodeled room, newly finished and cleaned after construction. Horizontal 4:3 composition. Soft, diffused natural daylight from a new window; no direct sun, no harsh shadows. Brand-new white window frame and sill with a spotless track, crisp new baseboards, new light oak flooring with protective covering already removed, freshly painted white walls, and a new recessed ceiling light. The room reads as new and completely clean, with no construction dust, no debris, no tools, no ladders, no paint cans, no plastic sheeting, no people, no cleaning product bottles. Warm neutral palette: ivory walls (#FAF7F2), warm sand light, natural oak. No text, no logos, no watermarks. Shot on a 35mm lens at f/4, slight natural depth of field, editorial architectural photography, calm mood, high resolution. Avoid: HDR effect, oversaturated colors, wide-angle distortion, staged stock-photo look, visible brands, text overlays.
 ```
 
-## 6. Cidade: San Francisco
-
-- **Caminho:** `public/images/areas/house-cleaning-san-francisco-victorian.webp`
-- **Dimensões:** 1600×1200 (4:3)
-- **Formato:** WebP, qualidade 82
-- **Uso:** imagem principal de `/areas/san-francisco`
-
-```
-Photorealistic exterior architectural photography of a row of painted Victorian houses on a San Francisco residential street, with tall bay windows catching soft afternoon light. Horizontal 4:3 composition. Overcast-bright or late-afternoon diffused daylight; no direct harsh sun. The houses have ornate wooden trim, bay windows, and pastel facades in muted tones of soft cream, pale sage and dusty blue. A gently sloping street, clean sidewalk, one or two small street trees. No people in frame, no cars in the foreground, no visible house numbers, no shop signs, no readable text of any kind. Warm neutral palette overall, with one accent of deep navy blue. No text, no logos, no watermarks. Shot on a 35mm lens at f/5.6, natural perspective with vertical lines kept straight, editorial architectural photography, calm mood, high resolution. Avoid: HDR effect, oversaturated colors, wide-angle distortion, fisheye, tourist-postcard look, text overlays.
-```
-
-## 7. Cidade: Daly City
-
-- **Caminho:** `public/images/areas/house-cleaning-daly-city-westlake.webp`
-- **Dimensões:** 1600×1200 (4:3)
-- **Formato:** WebP, qualidade 82
-- **Uso:** imagem principal de `/areas/daly-city`
-
-```
-Photorealistic exterior architectural photography of rows of mid-century pastel tract houses on a gently sloping hillside in the Westlake district of Daly City, California, under a low layer of coastal fog. Horizontal 4:3 composition. Soft, flat, diffused fog light; no direct sun, no harsh shadows. Repeating identical single-family and split-level homes in muted pastel colors (pale pink, soft mint, cream, light blue) with attached garages at street level and neat front steps. Clean sidewalks, low hedges. No people in frame, no cars in the foreground, no readable text, no house numbers, no signs. Cool, calm, slightly muted palette with warm neutral undertones. No text, no logos, no watermarks. Shot on a 50mm lens at f/5.6, natural perspective with vertical lines kept straight, editorial architectural photography, high resolution. Avoid: HDR effect, oversaturated colors, wide-angle distortion, fisheye, postcard look, text overlays.
-```
-
-## 8. Cidade: South San Francisco
-
-- **Caminho:** `public/images/areas/house-cleaning-south-san-francisco-hillside.webp`
-- **Dimensões:** 1600×1200 (4:3)
-- **Formato:** WebP, qualidade 82
-- **Uso:** imagem principal de `/areas/south-san-francisco`
-
-```
-Photorealistic exterior architectural photography of a residential hillside street in South San Francisco, California, with modest single-family homes stepping up the slope and a dry grassy ridge rising behind them. Horizontal 4:3 composition. Soft, diffused late-afternoon daylight; no direct harsh sun. Simple mid-century stucco homes in cream and warm beige, attached garages, tidy front yards and clean sidewalks. In the background, a bare golden-brown hillside ridge under a pale sky. No people in frame, no cars in the foreground, no readable text of any kind: no signs, no lettering on the hillside, no house numbers. Warm neutral palette with muted golden hillside tones. No text, no logos, no watermarks. Shot on a 50mm lens at f/5.6, natural perspective with vertical lines kept straight, editorial architectural photography, calm mood, high resolution. Avoid: HDR effect, oversaturated colors, wide-angle distortion, fisheye, postcard look, text overlays.
-```
-
-> Nota: a Sign Hill tem letras gigantes escritas na encosta. O prompt pede explicitamente **sem letras**, porque texto gerado por IA sai errado. Se quiser a Sign Hill de verdade na página, vale mais uma foto real.
-
-## 9. Cidade: San Mateo
-
-- **Caminho:** `public/images/areas/house-cleaning-san-mateo-family-home.webp`
-- **Dimensões:** 1600×1200 (4:3)
-- **Formato:** WebP, qualidade 82
-- **Uso:** imagem principal de `/areas/san-mateo`
-
-```
-Photorealistic exterior architectural photography of a tree-lined residential street of large family homes in San Mateo, California, in the style of the Baywood neighborhood. Horizontal 4:3 composition. Soft, diffused morning daylight filtered through mature trees; no direct harsh sun, no blown highlights. Substantial two-story homes with stucco or shingle facades in cream and warm grey, deep front porches, mature oak and magnolia trees, wide clean sidewalks, and well-kept front lawns. No people in frame, no cars in the foreground, no readable text, no house numbers, no signs. Warm neutral palette: cream, soft green foliage, warm sand, with one accent of deep navy blue on a front door. No text, no logos, no watermarks. Shot on a 50mm lens at f/5.6, natural perspective with vertical lines kept straight, editorial architectural photography, calm mood, high resolution. Avoid: HDR effect, oversaturated colors, wide-angle distortion, fisheye, real-estate-listing look, text overlays.
-```
-
-## 10. Cidade: Burlingame
-
-- **Caminho:** `public/images/areas/house-cleaning-burlingame-craftsman.webp`
-- **Dimensões:** 1600×1200 (4:3)
-- **Formato:** WebP, qualidade 82
-- **Uso:** imagem principal de `/areas/burlingame`
-
-```
-Photorealistic exterior architectural photography of a 1920s Craftsman house with original wood trim and a deep covered front porch, on a quiet tree-lined street in Burlingame, California. Horizontal 4:3 composition. Soft, diffused afternoon daylight; no direct harsh sun. The house has exposed rafter tails, tapered porch columns on stone bases, a low-pitched roof, warm painted wood siding in sage or soft grey, and original divided-light windows. Mature trees, a clipped hedge, a short brick path, clean sidewalk. No people in frame, no cars in the foreground, no readable text, no house numbers, no signs. Warm neutral palette: cream, soft sage, warm wood, with one accent of deep burgundy on the front door. No text, no logos, no watermarks. Shot on a 50mm lens at f/5.6, natural perspective with vertical lines kept straight, editorial architectural photography, calm mood, high resolution. Avoid: HDR effect, oversaturated colors, wide-angle distortion, fisheye, real-estate-listing look, text overlays.
-```
-
-## 11. Cidade: Millbrae
-
-- **Caminho:** `public/images/areas/house-cleaning-millbrae-hillside-home.webp`
-- **Dimensões:** 1600×1200 (4:3)
-- **Formato:** WebP, qualidade 82
-- **Uso:** imagem principal de `/areas/millbrae`
-
-```
-Photorealistic exterior architectural photography of a mid-century hillside home in Millbrae, California, seen from the street, with a wide view over the San Francisco Bay opening up behind it. Horizontal 4:3 composition. Soft, diffused late-afternoon daylight, slight haze over the bay; no direct harsh sun. A single-story ranch-style home with a low-pitched roof, cream stucco walls, a picture window and an attached garage, set on a sloping lot. In the far distance, the flat blue expanse of the bay under a pale sky, with a single small commercial airplane on approach, high and far away, barely more than a silhouette. No people in frame, no cars in the foreground, no readable text, no house numbers, no signs, no airline markings. Warm neutral palette with cool blue distance. No text, no logos, no watermarks. Shot on a 50mm lens at f/5.6, natural perspective with vertical lines kept straight, editorial architectural photography, calm mood, high resolution. Avoid: HDR effect, oversaturated colors, wide-angle distortion, fisheye, postcard look, text overlays.
-```
-
-## 12. Cidade: Pacifica
-
-- **Caminho:** `public/images/areas/house-cleaning-pacifica-coastal-home.webp`
-- **Dimensões:** 1600×1200 (4:3)
-- **Formato:** WebP, qualidade 82
-- **Uso:** imagem principal de `/areas/pacifica`
-
-```
-Photorealistic exterior architectural photography of a modest coastal home in the Linda Mar area of Pacifica, California, facing the Pacific Ocean, with green coastal hills rising behind it. Horizontal 4:3 composition. Soft, flat, diffused marine daylight with a light sea haze; no direct harsh sun. A simple single-story house with weathered wood or pale stucco siding, large windows facing the water, a low fence, and salt-tolerant coastal plants in the front yard. Beyond it, a strip of grey-blue ocean; behind, rounded green coastal hills partly wrapped in low fog. No people in frame, no cars in the foreground, no readable text, no house numbers, no signs. Muted coastal palette: soft grey-blue, sage green, warm sand, weathered wood. No text, no logos, no watermarks. Shot on a 50mm lens at f/5.6, natural perspective with vertical lines kept straight, editorial architectural photography, calm mood, high resolution. Avoid: HDR effect, oversaturated colors, wide-angle distortion, fisheye, postcard look, text overlays.
-```
-
-## 13. Open Graph: imagem de compartilhamento
+## 6. Open Graph: imagem de compartilhamento
 
 - **Caminho:** `public/images/og/sabrina-house-cleaning-og.jpg`
 - **Dimensões:** 1200×630 exatos
@@ -213,7 +128,7 @@ Photorealistic wide horizontal image, exactly 1200x630 pixels, of a bright, fres
 
 - Título: `House cleaning in the Bay Area`
 - Subtítulo: `Recurring · Deep · Move-in/out`
-- Rodapé: `Sabrina House Cleaning` + o telefone real
+- Rodapé: `Sabrina Cleaning Service` + o telefone real
 - Cores: título em `#0B2545`, subtítulo em `#3A5171`, marca em `#8C1D3F`
 
 ---

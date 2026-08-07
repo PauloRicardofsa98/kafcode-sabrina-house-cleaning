@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -42,7 +41,6 @@ export async function generateMetadata({
     path: `/areas/${city.slug}`,
     title: city.page.metaTitle,
     description: city.page.metaDescription,
-    image: city.image,
     enOnly: true,
   });
 }
@@ -122,18 +120,11 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             </div>
 
             <div className="flex flex-col gap-8">
-              <div className="relative aspect-4/3 overflow-hidden rounded-[var(--radius-card)] bg-sand">
-                <Image
-                  src={city.image}
-                  alt={city.imageAlt}
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 45vw"
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="rounded-[var(--radius-card)] border border-line bg-ivory p-7">
+              {/*
+                Sem foto: com 19 cidades, uma imagem crível para cada uma custaria
+                mais do que entrega. O que sustenta a página é o texto local.
+              */}
+              <div className="rounded-[var(--radius-card)] border border-line bg-ivory p-7 lg:sticky lg:top-28">
                 <h2 className="font-display text-lg text-ink">
                   {enLabels.city.localDetail} {city.name}
                 </h2>

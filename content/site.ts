@@ -8,21 +8,29 @@
 
 export const site = {
   /** Nome comercial usado em toda a interface e no schema. */
-  name: "Sabrina House Cleaning",
-  /** TODO CLIENTE: confirmar a razão social. O site antigo usava "Sabrina Mesquita Cleaning Service". */
-  legalName: "Sabrina House Cleaning",
+  name: "Sabrina Cleaning Service",
+  /** TODO CLIENTE: confirmar a razão social registrada. */
+  legalName: "Sabrina Cleaning Service",
 
   /** TODO CLIENTE: domínio final. Usado em canonical, hreflang, sitemap e OG. */
-  url: "https://sabrinahousecleaning.com",
+  url: "https://sabrinacleaningservice.com",
 
-  /** TODO CLIENTE: número real da Bay Area. O (407) do site antigo é de Orlando/FL. */
+  /**
+   * Número oficial, confirmado pela cliente.
+   *
+   * O DDD 407 é da Flórida: ela manteve o celular ao mudar para a Bay Area.
+   * Funciona igual para SMS e ligação. O único efeito é que morador local
+   * reconhece um número de fora, o que custa um pouco de confiança à primeira
+   * vista. Se um dia ela quiser um número 925 (Contra Costa), dá para portar
+   * ou adicionar um segundo, e aqui é o único lugar que muda.
+   */
   phone: {
-    e164: "+15550000000",
-    display: "(555) 000-0000",
+    e164: "+14078539402",
+    display: "(407) 853-9402",
   },
 
   /** TODO CLIENTE: e-mail de contato. */
-  email: "hello@sabrinahousecleaning.com",
+  email: "hello@sabrinacleaningservice.com",
 
   /**
    * Data de última revisão das páginas legais (ISO 8601).
@@ -31,20 +39,29 @@ export const site = {
    */
   legalUpdated: "2026-08-03",
 
-  /** Base de operação. TODO CLIENTE: cidade e CEP reais para o LocalBusiness. */
+  /**
+   * Base de operação.
+   * TODO CLIENTE: cidade e CEP reais. Assumi Concord por ser o centro
+   * geográfico da lista de cidades atendidas, mas isso vai para o
+   * `LocalBusiness` do JSON-LD e precisa bater com o endereço do Google
+   * Business, senão atrapalha o ranqueamento local em vez de ajudar.
+   */
   address: {
-    locality: "South San Francisco",
+    locality: "Concord",
     region: "CA",
-    postalCode: "94080",
+    postalCode: "94520",
     country: "US",
   },
 
   /** Centro aproximado da área atendida, usado no `geo` do JSON-LD. */
   geo: {
-    latitude: 37.6547,
-    longitude: -122.4077,
-    /** Raio de atendimento em metros (~40 km cobre SF + Península). */
-    radiusMeters: 40000,
+    latitude: 37.978,
+    longitude: -122.0311,
+    /**
+     * Raio em metros. 60 km a partir de Concord cobrem a lista inteira:
+     * Napa ao norte, San Ramon ao sul e São Francisco a oeste.
+     */
+    radiusMeters: 60000,
   },
 
   /** TODO CLIENTE: horário real de atendimento. */

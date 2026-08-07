@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
-import { ArrowIcon, MessageIcon, PinIcon } from "@/components/ui/icons";
+import { ArrowIcon, MessageIcon } from "@/components/ui/icons";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { cities } from "@/content/cities";
+import { cityRegions, getCities } from "@/content/cities";
 import { smsHref } from "@/content/site";
 import { defaultLocale, localizedHref, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/types";
@@ -12,10 +12,14 @@ import type { Dictionary } from "@/i18n/types";
 /**
  * Áreas atendidas.
  *
- * Em inglês, cada cidade é um card com link para a própria página (é o coração
- * do SEO local). Nos demais idiomas as páginas de cidade não existem, então a
- * seção vira uma lista de nomes, sem link morto e sem texto em inglês no meio
- * de uma página em português.
+ * São 19 cidades. Uma grade de cards com bairro e CTA em cada uma vira um muro
+ * exatamente no ponto da página em que o visitante só quer saber se a casa dele
+ * entra. Agrupar por região resolve isso: seis colunas curtas, escaneáveis, e a
+ * pessoa se localiza mais rápido do que numa lista alfabética.
+ *
+ * Em inglês cada cidade é link para a própria página (é o coração do SEO local).
+ * Nos demais idiomas as páginas não existem, então os nomes ficam como texto,
+ * sem link morto e sem inglês no meio de uma página em português.
  */
 export function AreasServed({
   locale,
@@ -42,45 +46,34 @@ export function AreasServed({
           as={headingAs}
         />
 
-        {linkable ? (
-          <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {cities.map((city) => (
-              <li key={city.slug}>
-                <Link
-                  href={localizedHref(locale, `/areas/${city.slug}`)}
-                  className="group flex h-full flex-col gap-2 rounded-[var(--radius-card)] border border-line bg-white p-6 transition-shadow duration-300 hover:shadow-[var(--shadow-soft)]"
-                >
-                  <span className="flex items-center gap-2 text-xs font-semibold tracking-[0.14em] text-blue uppercase">
-                    <PinIcon className="h-4 w-4" />
-                    {city.county}
-                  </span>
-                  <span className="font-display text-2xl text-ink">{city.name}</span>
-                  <span className="text-sm text-ink-soft">
-                    {city.neighborhoods.slice(0, 3).join(" · ")}
-                  </span>
-                  <span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-wine">
-                    {dict.areas.viewCity} {city.name}
-                    <ArrowIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <ul className="mt-12 flex flex-wrap gap-3">
-            {cities.map((city) => (
-              <li
-                key={city.slug}
-                className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-line bg-white px-4 py-2 text-sm text-ink"
-              >
-                <PinIcon className="h-4 w-4 text-blue" />
-                {city.name}
-              </li>
-            ))}
-          </ul>
-        )}
+        <div className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          {cityRegions.map((region) => (
+            <div key={region.label} className="reveal flex flex-col gap-4 border-t border-line pt-5">
+              <h3 className="text-xs font-semibold tracking-[0.16em] text-blue uppercase">
+                {region.label}
+              </h3>
+              <ul className="flex flex-col gap-2.5">
+                {getCities(region.slugs).map((city) => (
+                  <li key={city.slug}>
+                    {linkable ? (
+                      <Link
+                        href={localizedHref(locale, `/areas/${city.slug}`)}
+                        className="group inline-flex items-center gap-1.5 font-display text-lg text-ink transition-colors hover:text-blue"
+                      >
+                        {city.name}
+                        <ArrowIcon className="h-3.5 w-3.5 -translate-x-1 text-blue opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
+                      </Link>
+                    ) : (
+                      <span className="font-display text-lg text-ink">{city.name}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-line pt-8 sm:flex-row sm:items-end sm:justify-between">
           <p className="max-w-2xl text-base text-ink-soft">
             {dict.areas.note}{" "}
             <a
