@@ -7,6 +7,7 @@
 #   pnpm serp "house cleaning"                 todas as cidades principais
 #   pnpm serp "deep cleaning" --city concord   só uma cidade
 #   pnpm serp "house cleaning" --open          abre no navegador
+#   pnpm serp --health                         checa o site publicado (canonical, sitemap, robots)
 #   pnpm serp --brand                          checa as buscas pelo nome da empresa
 #   pnpm serp --index                          checa o que já foi indexado
 #   pnpm serp --list                           lista as cidades disponíveis
@@ -60,19 +61,21 @@ while [ $# -gt 0 ]; do
   case "$1" in
     --city) CITY="${2:-}"; shift 2 ;;
     --open) OPEN=true; shift ;;
+    --health) MODE="health"; shift ;;
     --brand) MODE="brand"; shift ;;
     --index) MODE="index"; shift ;;
     --list) MODE="list"; shift ;;
-    -h|--help) sed -n '2,27p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit 0 ;;
+    -h|--help) sed -n '2,28p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit 0 ;;
     -*) echo "Opção desconhecida: $1 (use --help)" >&2; exit 1 ;;
     *) QUERY="$1"; shift ;;
   esac
 done
 
 if [ -t 1 ]; then
-  BOLD=$'\033[1m'; DIM=$'\033[2m'; BLUE=$'\033[34m'; RESET=$'\033[0m'
+  BOLD=$'\033[1m'; DIM=$'\033[2m'; BLUE=$'\033[34m'
+  GREEN=$'\033[32m'; RED=$'\033[31m'; RESET=$'\033[0m'
 else
-  BOLD=""; DIM=""; BLUE=""; RESET=""
+  BOLD=""; DIM=""; BLUE=""; GREEN=""; RED=""; RESET=""
 fi
 
 # ---------------------------------------------------------------------------
@@ -105,6 +108,81 @@ case "$MODE" in
     echo
     echo "${DIM}Sem --city, o script usa: $DEFAULT_CITIES${RESET}"
     echo
+    exit 0
+    ;;
+
+  health)
+    BASE="https://$DOMAIN"
+    pass=0; fail=0
+    ok()   { printf "  ${GREEN}ok  ${RESET} %s\n" "$1"; pass=$((pass+1)); }
+    bad()  { printf "  ${RED}FALHA${RESET} %s\n" "$1"; fail=$((fail+1)); }
+
+    echo
+    echo "${BOLD}Saúde de $BASE${RESET}"
+    echo "${DIM}Tudo aqui está sob nosso controle. Se algo falhar, é bug, não espera.${RESET}"
+    echo
+
+    code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$BASE/" || echo 000)"
+    [ "$code" = "200" ] && ok "home responde 200" || bad "home respondeu $code"
+
+    home="$(curl -s --max-time 25 "$BASE/?cb=$$" || true)"
+    canon="$(printf '%s' "$home" | grep -oE '<link rel="canonical" href="[^"]*"' | head -1 | sed -E 's/.*href="//; s/"//')"
+    case "$canon" in
+      "$BASE"|"$BASE/") ok "canonical da home aponta para o domínio certo" ;;
+      "") bad "home sem canonical" ;;
+      *) bad "canonical da home aponta para $canon" ;;
+    esac
+
+    city="$(curl -s --max-time 25 "$BASE/areas/concord?cb=$$" || true)"
+    ccanon="$(printf '%s' "$city" | grep -oE '<link rel="canonical" href="[^"]*"' | head -1 | sed -E 's/.*href="//; s/"//')"
+    [ "$ccanon" = "$BASE/areas/concord" ] && ok "canonical de página de cidade correto" || bad "canonical de cidade: $ccanon"
+
+    if printf '%s' "$home" | grep -qiE '<meta name="robots"[^>]*noindex'; then
+      bad "home tem meta robots noindex"
+    else
+      ok "sem meta noindex"
+    fi
+
+    if curl -sI --max-time 20 "$BASE/" | grep -qi "x-robots-tag.*noindex"; then
+      bad "header X-Robots-Tag bloqueia indexação"
+    else
+      ok "sem X-Robots-Tag bloqueando"
+    fi
+
+    robots="$(curl -s --max-time 20 "$BASE/robots.txt" || true)"
+    printf '%s' "$robots" | grep -q "Sitemap: $BASE/sitemap.xml" \
+      && ok "robots.txt aponta o sitemap certo" \
+      || bad "robots.txt com sitemap errado ou ausente"
+
+    sm="$(curl -s --max-time 30 "$BASE/sitemap.xml" || true)"
+    n="$(printf '%s' "$sm" | grep -c '<loc>' || echo 0)"
+    [ "$n" -gt 0 ] && ok "sitemap com $n URLs" || bad "sitemap vazio ou inacessível"
+
+    outside="$(printf '%s' "$sm" | grep -oE '<loc>[^<]*</loc>' | grep -cv "$BASE" || true)"
+    [ "${outside:-0}" = "0" ] && ok "todas as URLs do sitemap no domínio certo" \
+      || bad "$outside URL(s) do sitemap em outro domínio"
+
+    printf '%s' "$home" | grep -q 'hrefLang="en-US"' \
+      && ok "hreflang en-US presente" || bad "hreflang ausente"
+
+    printf '%s' "$home" | grep -q 'application/ld+json' \
+      && ok "JSON-LD presente" || bad "JSON-LD ausente"
+
+    for path in "/" "/pt" "/es" "/services" "/areas" "/areas/concord" "/services/deep-cleaning" "/quote"; do
+      c="$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$BASE$path" || echo 000)"
+      [ "$c" = "200" ] || bad "$path respondeu $c"
+    done
+    ok "amostra de 8 rotas responde 200"
+
+    echo
+    if [ "$fail" -eq 0 ]; then
+      echo "  ${GREEN}${pass} verificações passaram.${RESET} O que depende de nós está pronto."
+      echo "  ${DIM}O resto é o Google levar o tempo dele. Use --index e --brand.${RESET}"
+    else
+      echo "  ${RED}${fail} falha(s)${RESET} e ${pass} ok. Corrija antes de esperar resultado de busca."
+    fi
+    echo
+    [ "$fail" -eq 0 ] || exit 1
     exit 0
     ;;
 

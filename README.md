@@ -32,7 +32,7 @@ Em desenvolvimento você verá erros 500 em `/_next/image` para as imagens que a
 
 ### `pnpm serp`
 
-Monta links de busca do Google com a localização de uma das cidades atendidas, para conferir o resultado local sem estar na Califórnia. `pnpm serp --list` mostra as cidades, `--index` checa o que já foi indexado. O passo a passo completo de SEO local está em [`SEO.md`](./SEO.md).
+Monta links de busca do Google com a localização de uma das cidades atendidas, para conferir o resultado local sem estar na Califórnia. `--health` verifica o site publicado (canonical, sitemap, robots, noindex), `--brand` e `--index` checam o lado do Google, `--list` mostra as cidades. O passo a passo completo de SEO local está em [`SEO.md`](./SEO.md).
 
 ---
 

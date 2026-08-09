@@ -274,9 +274,33 @@ Aqui está o problema: pesquisar "house cleaning Concord" do Brasil devolve um r
 
 Estas são as formas de contornar, da mais prática para a mais confiável.
 
+### 8.0 Os quatro níveis de verificação
+
+Vale separar, porque só o primeiro depende de nós.
+
+| Nível | Como checar | Quando responde | Depende de |
+| --- | --- | --- | --- |
+| **1. Técnico** | `pnpm serp --health` | Na hora | Nós |
+| **2. Indexação** | `pnpm serp --index` | Horas a 2 semanas | Google |
+| **3. Busca de marca** | `pnpm serp --brand` | Dias | Google |
+| **4. Intenção local** | Search Console | Meses | Google + avaliações |
+
+Se o nível 1 falhar, é bug e tem conserto imediato. Do nível 2 em diante é espera, e insistir não acelera.
+
+```bash
+pnpm serp --health
+```
+
+Checa o site publicado: canonical apontando para o domínio certo, ausência de `noindex`, `robots.txt` com o sitemap correto, todas as URLs do sitemap no host certo, `hreflang`, JSON-LD e uma amostra de rotas respondendo 200.
+
+Foi assim que pegamos o problema mais sério do projeto: um deploy antigo servia canonical para `sabrinacleaningservice.com`, sem o `.br`, um domínio que nem existe. Toda página dizia ao Google "a versão oficial disto está em outro lugar", e o sitemap enviado ao Search Console foi descartado por declarar URLs de outro host. Não havia sintoma visível: o site abria normal.
+
+**Rode isso depois de todo deploy que mexa em domínio, rota ou metadata.**
+
 ### 8.1 O script do repositório
 
 ```bash
+pnpm serp --health                            # o site publicado está correto?
 pnpm serp --brand                             # buscas pelo nome da empresa
 pnpm serp "house cleaning"                    # cidades principais
 pnpm serp "deep cleaning" --city orinda       # uma cidade
