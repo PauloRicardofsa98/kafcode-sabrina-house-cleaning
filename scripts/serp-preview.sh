@@ -7,6 +7,7 @@
 #   pnpm serp "house cleaning"                 todas as cidades principais
 #   pnpm serp "deep cleaning" --city concord   só uma cidade
 #   pnpm serp "house cleaning" --open          abre no navegador
+#   pnpm serp --brand                          checa as buscas pelo nome da empresa
 #   pnpm serp --index                          checa o que já foi indexado
 #   pnpm serp --list                           lista as cidades disponíveis
 #
@@ -30,7 +31,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 # Domínio lido de content/site.ts, para não duplicar a informação.
 DOMAIN="$(grep -oE 'url: "https?://[^"]+"' "$ROOT/content/site.ts" | head -1 | sed -E 's|.*https?://||; s|"||')"
-[ -z "$DOMAIN" ] && DOMAIN="sabrinacleaningservice.com"
+[ -z "$DOMAIN" ] && DOMAIN="sabrinacleaningservice.com.br"
 
 # Nomes canônicos no formato que o Google espera: Cidade,Estado,País.
 CITIES="concord:Concord,California,United States
@@ -59,9 +60,10 @@ while [ $# -gt 0 ]; do
   case "$1" in
     --city) CITY="${2:-}"; shift 2 ;;
     --open) OPEN=true; shift ;;
+    --brand) MODE="brand"; shift ;;
     --index) MODE="index"; shift ;;
     --list) MODE="list"; shift ;;
-    -h|--help) sed -n '2,26p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit 0 ;;
+    -h|--help) sed -n '2,27p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit 0 ;;
     -*) echo "Opção desconhecida: $1 (use --help)" >&2; exit 1 ;;
     *) QUERY="$1"; shift ;;
   esac
@@ -102,6 +104,26 @@ case "$MODE" in
     done
     echo
     echo "${DIM}Sem --city, o script usa: $DEFAULT_CITIES${RESET}"
+    echo
+    exit 0
+    ;;
+
+  brand)
+    BRAND="$(grep -oE 'name: "[^"]+"' "$ROOT/content/site.ts" | head -1 | sed -E 's/name: "//; s/"//')"
+    [ -z "$BRAND" ] && BRAND="Sabrina Cleaning Service"
+    echo
+    echo "${BOLD}Busca pela marca: \"$BRAND\"${RESET}"
+    echo "${DIM}É a meta mais fácil e a primeira que deve cair. Sem concorrência pela"
+    echo "string exata, e o domínio contém o nome. Depois de indexado, é 1º lugar.${RESET}"
+    echo
+    for variant in "$BRAND" "$BRAND Concord" "Sabrina cleaning Contra Costa"; do
+      canonical="Concord,California,United States"
+      url="https://www.google.com/search?q=$(urlencode "$variant")&uule=$(urlencode "$(uule_for "$canonical")")&pws=0&gl=us&hl=en"
+      printf "  %s%s%s\n  %s%s%s\n\n" "$BOLD" "$variant" "$RESET" "$BLUE" "$url" "$RESET"
+      $OPEN && open_url "$url"
+    done
+    echo "${DIM}Se o site não aparece em 1º pela marca depois de indexado, algo está"
+    echo "errado: verifique indexação com --index e o canonical das páginas.${RESET}"
     echo
     exit 0
     ;;

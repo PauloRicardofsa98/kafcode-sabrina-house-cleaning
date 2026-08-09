@@ -26,6 +26,24 @@ Quando alguém em Concord pesquisa "house cleaning near me", a tela tem **duas c
 └─────────────────────────────────────────┘
 ```
 
+### Antes: são três buscas diferentes, não uma
+
+Vale separar, porque a dificuldade e o prazo mudam completamente.
+
+| Busca | Dificuldade | Quanto tempo | Quem chega assim |
+| --- | --- | --- | --- |
+| `Sabrina Cleaning Service` | Fácil | Dias | Quem já ouviu o nome |
+| `cleaning service Concord` | Média a difícil | Meses | Quem está procurando alguém |
+| `cleaning service` (sem cidade) | Não vale perseguir | Nunca | Ninguém útil |
+
+**Busca de marca é praticamente garantida.** Ninguém disputa a string "Sabrina Cleaning Service", o domínio contém o nome e o site inteiro fala dele. Assim que o Google indexar, é primeiro lugar. Isso resolve o caso de quem recebeu um cartão, viu o carro, ouviu de uma vizinha e foi pesquisar para conferir se a empresa existe.
+
+Só que **busca de marca só captura quem já conhece o nome.** Para um negócio novo, isso é quase ninguém. O cliente que ainda não sabe que ela existe digita `house cleaning near me` ou `cleaning service Walnut Creek`, e aí a disputa é outra.
+
+**`cleaning service` sozinho não vale perseguir.** Quem digita isso sem cidade recebe resultado local pelo IP de qualquer jeito, e disputar o termo genérico no país inteiro contra franquias nacionais não é realista nem útil. O termo que traz cliente é sempre o que tem cidade ou intenção local junto.
+
+### O mapa é onde o dinheiro está
+
 **Para serviço local, o bloco do mapa é o que decide.** A maioria dos cliques em busca de serviço doméstico para nesses três resultados. E quem entra ali não é o site: é o **Google Business Profile** (o antigo Google Meu Negócio), com peso enorme para **quantidade e frequência de avaliações** e para a **distância** entre o endereço cadastrado e quem pesquisa.
 
 Então a ordem de importância é, sem meio-termo:
@@ -52,6 +70,24 @@ Não existe atalho honesto aqui.
 
 Quem promete primeira página em 30 dias está vendendo anúncio ou mentindo.
 
+### O domínio é `.com.br`, e o que isso custa
+
+Decisão tomada: a cliente fica com `sabrinacleaningservice.com.br`.
+
+`.br` é um ccTLD, e a documentação do Google diz que ccTLD é *"um sinal forte, tanto para usuários quanto para buscadores, de que o site é destinado explicitamente a um determinado país"*. Ele trata alguns como genéricos (`.tv`, `.me`), mas `.br` não é um deles. E os métodos de sobrescrever o país valem, nas palavras do próprio Google, *"se o seu site tem um domínio de topo genérico como `.com` ou `.org`"*. Para ccTLD, não há como.
+
+O impacto, distribuído pelos três tipos de busca acima:
+
+| | Impacto do `.com.br` |
+| --- | --- |
+| Busca de marca | Praticamente nenhum. É o objetivo declarado, e ele está preservado. |
+| Bloco do mapa | Baixo. Quem responde ali é o Business Profile, não o domínio. |
+| Orgânico com intenção local | Real. É onde as 19 páginas de cidade competem. |
+
+**Todo o resto que sinaliza os EUA já está no site:** `hreflang` `en-US`, endereço e telefone americanos no `LocalBusiness`, `areaServed` com as 19 cidades, conteúdo em inglês. Isso é exatamente a lista que o Google descreve como sinais de segmentação. O único item que falta é o TLD, e é o único que não dá para mudar sem trocar de domínio.
+
+Se um dia ela mudar de ideia, um `.com` custa cerca de US$ 12 por ano e o `.br` vira redirect 301. O ranqueamento de marca acompanha, e nada do trabalho feito se perde.
+
 ### O que a concorrência já tem
 
 `paixaocleaning.com` é o concorrente direto mapeado no briefing. Ele tem licença municipal, credenciamento BBB, mais de 30 fotos de antes e depois e anos de operação. Não dá para empatar em autoridade no primeiro mês. Dá para ganhar em **especificidade**: ele tem uma página listando 34 cidades; a Sabrina tem 19 páginas, uma por cidade, cada uma falando do que muda naquela cidade.
@@ -65,12 +101,12 @@ Estes três campos vão para o JSON-LD, o canonical e o sitemap. Publicar com pl
 Tudo em **`content/site.ts`**:
 
 ```ts
-url:     "https://sabrinacleaningservice.com"   // ← domínio real
-email:   "hello@sabrinacleaningservice.com"     // ← e-mail real
-address: { locality: "Concord", postalCode: "94520", ... }  // ← precisa bater com o Business Profile
+url:     "https://sabrinacleaningservice.com.br"      // ✅ confirmado
+email:   "hello@sabrinacleaningservice.com.br"        // ← e-mail real, ainda placeholder
+address: { locality: "Concord", postalCode: "94520" } // ← precisa bater com o Business Profile
 ```
 
-O telefone `(407) 853-9402` já está confirmado.
+Domínio e telefone `(407) 853-9402` já estão confirmados. Faltam o e-mail e o endereço.
 
 ⚠️ **O endereço é o campo mais delicado.** Ele precisa ser **exatamente igual** ao que for cadastrado no Google Business Profile. Divergência entre o site e o perfil é um dos motivos mais comuns de o negócio não ranquear no mapa.
 
@@ -105,9 +141,9 @@ Não há variável de ambiente para configurar. O formulário não usa backend.
 **Depois do deploy, confira:**
 
 ```bash
-curl -sI https://sabrinacleaningservice.com | head -3          # 200
-curl -s  https://sabrinacleaningservice.com/robots.txt          # aponta o sitemap
-curl -s  https://sabrinacleaningservice.com/sitemap.xml | head  # 54 URLs
+curl -sI https://sabrinacleaningservice.com.br | head -3          # 200
+curl -s  https://sabrinacleaningservice.com.br/robots.txt          # aponta o sitemap
+curl -s  https://sabrinacleaningservice.com.br/sitemap.xml | head  # 54 URLs
 ```
 
 ---
@@ -241,6 +277,7 @@ Estas são as formas de contornar, da mais prática para a mais confiável.
 ### 8.1 O script do repositório
 
 ```bash
+pnpm serp --brand                             # buscas pelo nome da empresa
 pnpm serp "house cleaning"                    # cidades principais
 pnpm serp "deep cleaning" --city orinda       # uma cidade
 pnpm serp "move out cleaning" --open          # abre no navegador
@@ -335,10 +372,11 @@ E nestes validadores oficiais, colando o HTML gerado:
 ## 9. Resumo executável
 
 ```
-□  Preencher domínio, e-mail e endereço em content/site.ts
+□  Preencher e-mail e endereço em content/site.ts (domínio e telefone já OK)
 □  Confirmar seguro e ligar claims.licensedAndInsured, se for o caso
 □  Deploy na Vercel + domínio apontado
 □  Search Console: verificar + enviar sitemap + solicitar indexação da home
+□  Conferir a busca de marca com pnpm serp --brand (deve cair em 1º em dias)
 □  Google Business Profile: criar e INICIAR A VERIFICAÇÃO (é o passo mais lento)
 □  Business Profile: categorias, 19 áreas, horário, serviços, fotos
 □  Yelp, Nextdoor, Bing Places, Apple Business Connect, com NAP idêntico

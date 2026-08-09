@@ -12,8 +12,21 @@ export const site = {
   /** TODO CLIENTE: confirmar a razão social registrada. */
   legalName: "Sabrina Cleaning Service",
 
-  /** TODO CLIENTE: domínio final. Usado em canonical, hreflang, sitemap e OG. */
-  url: "https://sabrinacleaningservice.com",
+  /**
+   * Domínio oficial, confirmado pela cliente.
+   *
+   * ⚠️ `.com.br` é um ccTLD do Brasil, e o Google trata ccTLD como sinal forte
+   * de que o site é destinado àquele país. Não dá para sobrescrever: os
+   * métodos de geotargeting que o Google documenta valem só para domínios
+   * genéricos (.com, .org). Isso pesa na busca orgânica com intenção local nos
+   * EUA ("cleaning service Concord"), e quase nada na busca por marca
+   * ("Sabrina Cleaning Service") nem no bloco do mapa.
+   *
+   * Todo o resto que sinaliza os EUA já está feito: hreflang en-US, endereço e
+   * telefone americanos no LocalBusiness, areaServed com as 19 cidades e o
+   * conteúdo em inglês. Ver SEO.md, seção 0.
+   */
+  url: "https://sabrinacleaningservice.com.br",
 
   /**
    * Número oficial, confirmado pela cliente.
@@ -30,7 +43,7 @@ export const site = {
   },
 
   /** TODO CLIENTE: e-mail de contato. */
-  email: "hello@sabrinacleaningservice.com",
+  email: "hello@sabrinacleaningservice.com.br",
 
   /**
    * Data de última revisão das páginas legais (ISO 8601).
