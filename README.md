@@ -17,17 +17,22 @@ pnpm build        # build de produção
 pnpm start        # serve o build
 pnpm lint
 pnpm images       # converte e otimiza as imagens de public/
+pnpm serp "..."   # simula a busca do Google numa das cidades atendidas
 ```
 
 ### `pnpm images`
 
-Salve o PNG que o ChatGPT gerou na pasta certa dentro de `public/images/`, com o nome final, e rode `pnpm images`. O script (`scripts/optimize-images.sh`) decide formato, tamanho e qualidade pelo diretório: raiz vira WebP de até 2400px, `services/` e `areas/` viram WebP de até 1600px, `og/` vira JPEG exatamente 1200×630, e `icons/` mais a logo do JSON-LD ficam intocados. Rodar de novo não refaz o que já está em dia. Aceita `--dry-run`, `--clean` (apaga o original) e `--force`.
+Salve o PNG que o ChatGPT gerou na pasta certa dentro de `public/images/`, com o nome final, e rode `pnpm images`. O script (`scripts/optimize-images.sh`) decide formato, tamanho e qualidade pelo diretório: raiz vira WebP de até 2400px, `services/` vira WebP de até 1600px, `og/` vira JPEG exatamente 1200×630, e `icons/` mais a logo do JSON-LD ficam intocados. Rodar de novo não refaz o que já está em dia. Aceita `--dry-run`, `--clean` (apaga o original) e `--force`.
 
 Precisa do ImageMagick (`brew install imagemagick`), que é ferramenta de sistema e não entra no `package.json`.
 
 > Se o `pnpm install` reclamar de build scripts, o `pnpm-workspace.yaml` já resolve: `unrs-resolver` é liberado (precisa do binário nativo) e `sharp` fica bloqueado de propósito, porque os binários dele vêm dos pacotes opcionais `@img/sharp-*` e na Vercel o sharp é fornecido pela plataforma.
 
 Em desenvolvimento você verá erros 500 em `/_next/image` para as imagens que ainda não foram geradas. **Isso é esperado**, porque o código já aponta para os caminhos finais. Ver [`ASSETS.md`](./ASSETS.md).
+
+### `pnpm serp`
+
+Monta links de busca do Google com a localização de uma das cidades atendidas, para conferir o resultado local sem estar na Califórnia. `pnpm serp --list` mostra as cidades, `--index` checa o que já foi indexado. O passo a passo completo de SEO local está em [`SEO.md`](./SEO.md).
 
 ---
 
@@ -47,6 +52,7 @@ app/
   globals.css                design tokens do Tailwind v4
 
 scripts/optimize-images.sh   conversão e otimização das imagens de public/
+scripts/serp-preview.sh      simulação de busca local do Google
 
 proxy.ts                     roteamento de idioma (era middleware.ts no Next 15)
 
