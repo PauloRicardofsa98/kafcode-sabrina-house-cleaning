@@ -236,13 +236,6 @@ const pt: Dictionary = {
     eyebrow: "Clientes",
     title: "O que dizem por aí",
     subtitle: "Avaliações de casas em Contra Costa e no East Bay.",
-    empty: {
-      title: "Estamos reunindo as avaliações",
-      body: "Em vez de publicar depoimento inventado, deixamos este espaço vazio até que clientes reais o preencham. Se quiser conversar com alguém do seu bairro que já atendemos, é só pedir que a gente conecta vocês.",
-      cta: "Pedir uma referência",
-      smsBody:
-        "Oi, Sabrina! Antes de fechar, você poderia me colocar em contato com algum cliente perto de mim? Meu ZIP code é ",
-    },
   },
 
   pricing: {

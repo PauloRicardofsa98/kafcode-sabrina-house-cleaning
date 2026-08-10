@@ -244,13 +244,6 @@ const en = {
     eyebrow: "Clients",
     title: "What people say",
     subtitle: "Reviews from homes across Contra Costa and the East Bay.",
-    empty: {
-      title: "We're collecting reviews right now",
-      body: "Rather than publish something invented, we've left this space empty until real clients fill it. If you'd like to hear from someone we already clean for in your neighborhood, just ask and we'll put you in touch.",
-      cta: "Ask for a reference",
-      smsBody:
-        "Hi Sabrina! Could you put me in touch with a client near me before I book? My ZIP code is ",
-    },
   },
 
   pricing: {
