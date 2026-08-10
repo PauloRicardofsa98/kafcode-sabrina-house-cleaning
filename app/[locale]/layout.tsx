@@ -61,9 +61,18 @@ export async function generateMetadata({
     creator: site.name,
     publisher: site.name,
     formatDetection: { telephone: true, address: false, email: false },
-    // O favicon SVG vem da convenção de arquivo (`app/icon.svg`).
-    // O apple-touch-icon precisa ser PNG e está pendente em ASSETS.md.
+    /**
+     * O `.ico` vem da convenção `app/favicon.ico` e já entra no `<head>`
+     * sozinho, com URL estável derivada do conteúdo. Aqui declaramos as
+     * alternativas maiores: o Google recomenda favicon **acima** de 48x48 e
+     * escolhe entre as opções que encontrar.
+     */
     icons: {
+      icon: [
+        { url: "/icon.svg", type: "image/svg+xml" },
+        { url: "/images/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+        { url: "/images/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+      ],
       apple: [{ url: "/images/icons/apple-touch-icon.png", sizes: "180x180" }],
     },
     manifest: "/manifest.webmanifest",
