@@ -11,6 +11,7 @@ import { ServicesGrid } from "@/components/sections/services-grid";
 import { Testimonials } from "@/components/sections/testimonials";
 import { TrustStrip } from "@/components/sections/trust-strip";
 import { WhyUs } from "@/components/sections/why-us";
+import { Feedback } from "@/components/sections/feedback";
 import { JsonLd } from "@/components/ui/json-ld";
 import { isLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -63,6 +64,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         moreHref={faqMoreHref(locale)}
         moreLabel={dict.faq.more}
       />
+      <Feedback locale={locale} dict={dict} />
       <FinalCta dict={dict} />
 
       {/* Só as perguntas realmente exibidas nesta página entram no FAQPage. */}

@@ -238,6 +238,43 @@ const pt: Dictionary = {
     subtitle: "Avaliações de casas em Contra Costa e no East Bay.",
   },
 
+  feedback: {
+    eyebrow: "Avaliação",
+    title: "Como foi a sua experiência?",
+    subtitle:
+      "Se você já utilizou nossos serviços de limpeza, queremos muito saber como foi a sua experiência.",
+
+    cardTitle: "Conte como foi",
+    cardBody:
+      "Sua avaliação nos ajuda a melhorar o serviço e também ajuda outros clientes a conhecer melhor o nosso trabalho.",
+    trigger: "Deixar uma avaliação",
+    note: "Sua avaliação será revisada antes de ser publicada no site.",
+
+    modal: {
+      title: "Deixe sua avaliação",
+      close: "Fechar",
+    },
+
+    form: {
+      name: "Nome",
+      city: "Cidade",
+      rating: "Avaliação",
+      comment: "Seu feedback",
+      submit: "Enviar avaliação",
+      sending: "Enviando...",
+      ratingLabel: "de 5 estrelas",
+
+      validationError:
+        "Preencha todos os campos e selecione uma avaliação.",
+      submitError:
+        "Não foi possível enviar sua avaliação. Tente novamente.",
+
+      successTitle: "Obrigado pela sua avaliação!",
+      successBody:
+        "Sua avaliação foi enviada com sucesso.",
+    },
+  },
+
   pricing: {
     eyebrow: "Preços",
     title: "Orçamento grátis, preço fechado",

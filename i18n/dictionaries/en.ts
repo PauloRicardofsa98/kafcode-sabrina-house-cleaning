@@ -246,6 +246,43 @@ const en = {
     subtitle: "Reviews from homes across Contra Costa and the East Bay.",
   },
 
+  feedback: {
+    eyebrow: "Feedback",
+    title: "How was your experience?",
+    subtitle:
+      "If you've used our cleaning services, we'd love to hear about your experience.",
+
+    cardTitle: "Share your experience",
+    cardBody:
+      "Your feedback helps us improve our services and helps other customers learn about their experience with us.",
+    trigger: "Leave your feedback",
+    note: "Your feedback will be reviewed before being published on our website.",
+
+    modal: {
+      title: "Leave your feedback",
+      close: "Close",
+    },
+
+    form: {
+      name: "Name",
+      city: "City",
+      rating: "Rating",
+      comment: "Your feedback",
+      submit: "Send feedback",
+      sending: "Sending...",
+      ratingLabel: "out of 5 stars",
+
+      validationError:
+        "Please fill in all fields and select a rating.",
+      submitError:
+        "We couldn't send your feedback. Please try again.",
+
+      successTitle: "Thank you for your feedback!",
+      successBody:
+        "Your feedback has been submitted successfully.",
+    },
+  },
+
   pricing: {
     eyebrow: "Pricing",
     title: "Free estimates, flat prices",
