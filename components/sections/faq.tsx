@@ -80,7 +80,6 @@ export function dictionaryFaqItems(dict: Dictionary): FaqItem[] {
     dict.faq.items.supplies,
     dict.faq.items.frequency,
     dict.faq.items.pets,
-    dict.faq.items.guarantee,
     dict.faq.items.access,
   ];
 }

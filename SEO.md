@@ -82,9 +82,9 @@ O impacto, distribuído pelos três tipos de busca acima:
 | --- | --- |
 | Busca de marca | Praticamente nenhum. É o objetivo declarado, e ele está preservado. |
 | Bloco do mapa | Baixo. Quem responde ali é o Business Profile, não o domínio. |
-| Orgânico com intenção local | Real. É onde as 19 páginas de cidade competem. |
+| Orgânico com intenção local | Real. É onde as 18 páginas de cidade competem. |
 
-**Todo o resto que sinaliza os EUA já está no site:** `hreflang` `en-US`, endereço e telefone americanos no `LocalBusiness`, `areaServed` com as 19 cidades, conteúdo em inglês. Isso é exatamente a lista que o Google descreve como sinais de segmentação. O único item que falta é o TLD, e é o único que não dá para mudar sem trocar de domínio.
+**Todo o resto que sinaliza os EUA já está no site:** `hreflang` `en-US`, endereço e telefone americanos no `LocalBusiness`, `areaServed` com as 18 cidades, conteúdo em inglês. Isso é exatamente a lista que o Google descreve como sinais de segmentação. O único item que falta é o TLD, e é o único que não dá para mudar sem trocar de domínio.
 
 Se um dia ela mudar de ideia, um `.com` custa cerca de US$ 12 por ano e o `.br` vira redirect 301. O ranqueamento de marca acompanha, e nada do trabalho feito se perde.
 
@@ -160,7 +160,7 @@ curl -s  https://sabrinacleaningservice.com.br/sitemap.xml | head  # 54 URLs
 
 O resto entra sozinho pelo sitemap, em dias ou semanas.
 
-> Enviar o sitemap não garante indexação. O Google decide o que vale indexar. Página com conteúdo próprio (que é o caso das 19) tem chance muito maior do que página gerada em massa.
+> Enviar o sitemap não garante indexação. O Google decide o que vale indexar. Página com conteúdo próprio (que é o caso das 18) tem chance muito maior do que página gerada em massa.
 
 ---
 
@@ -173,7 +173,7 @@ Se você só puder fazer uma coisa desta lista, faça esta.
 3. **Categoria principal:** `House cleaning service`
    **Categorias secundárias:** `Cleaning service`, `Deep cleaning service`
 4. **Tipo:** marque que atende na casa do cliente → vira service-area business, o endereço fica oculto
-5. **Áreas atendidas:** cadastre as 19 cidades. O Google aceita até 20, então cabe exatamente.
+5. **Áreas atendidas:** cadastre as 18 cidades. O Google aceita até 20, então cabe com folga.
 6. **Verificação:** hoje costuma ser por vídeo (mostrar equipamentos, veículo, materiais impressos e o entorno do endereço). Pode levar de dias a algumas semanas. É a etapa mais lenta do processo inteiro, então **comece por ela**.
 7. **Preencher tudo:** horário, telefone (o mesmo do site), site (a home), serviços com descrição, atributos (identificada como negócio de mulher, se ela quiser)
 8. **Fotos:** o item mais subestimado. Perfis com foto recebem sensivelmente mais clique. Antes e depois de trabalhos reais valem mais do que qualquer imagem gerada.
@@ -402,7 +402,7 @@ E nestes validadores oficiais, colando o HTML gerado:
 □  Search Console: verificar + enviar sitemap + solicitar indexação da home
 □  Conferir a busca de marca com pnpm serp --brand (deve cair em 1º em dias)
 □  Google Business Profile: criar e INICIAR A VERIFICAÇÃO (é o passo mais lento)
-□  Business Profile: categorias, 19 áreas, horário, serviços, fotos
+□  Business Profile: categorias, 18 áreas, horário, serviços, fotos
 □  Yelp, Nextdoor, Bing Places, Apple Business Connect, com NAP idêntico
 □  Preencher socials em content/site.ts
 □  Montar a rotina de pedir avaliação no dia da limpeza

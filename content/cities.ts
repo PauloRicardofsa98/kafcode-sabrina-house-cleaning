@@ -6,7 +6,7 @@
  * duplicado. A copy longa é **EN-only**; nos outros idiomas a cidade aparece
  * apenas como nome na listagem do hub.
  *
- * As páginas de cidade não têm foto: com 19 cidades, gerar uma imagem específica
+ * As páginas de cidade não têm foto: com 18 cidades, gerar uma imagem específica
  * e crível para cada uma custaria mais do que entrega. O que sustenta a página é
  * o texto local, não a foto.
  */
@@ -789,7 +789,7 @@ export const cities: City[] = [
   },
 
   // ---------------------------------------------------------------------------
-  // Solano e Napa
+  // Solano
   // ---------------------------------------------------------------------------
   {
     slug: "benicia",
@@ -803,7 +803,7 @@ export const cities: City[] = [
       "Waterfront",
       "East Second Street",
     ],
-    nearby: ["vallejo", "martinez", "napa"],
+    nearby: ["vallejo", "martinez", "concord"],
     page: {
       metaTitle: "House Cleaning in Benicia, CA",
       metaDescription:
@@ -860,7 +860,7 @@ export const cities: City[] = [
       "Country Club Crest",
       "St. Vincent's Hill",
     ],
-    nearby: ["benicia", "napa", "berkeley"],
+    nearby: ["benicia", "martinez", "berkeley"],
     page: {
       metaTitle: "House Cleaning in Vallejo, CA",
       metaDescription:
@@ -903,64 +903,7 @@ export const cities: City[] = [
         },
         {
           q: "Is there a travel charge from Contra Costa?",
-          a: "No. The flat price includes getting there, and we schedule Vallejo alongside our Benicia and Napa work.",
-        },
-      ],
-    },
-  },
-  {
-    slug: "napa",
-    name: "Napa",
-    county: "Napa County",
-    zips: ["94558", "94559"],
-    neighborhoods: [
-      "Downtown Napa",
-      "Alta Heights",
-      "Browns Valley",
-      "Carneros",
-      "Silverado",
-      "Old Town",
-    ],
-    nearby: ["vallejo", "benicia", "walnut-creek"],
-    page: {
-      metaTitle: "House Cleaning in Napa, CA",
-      metaDescription:
-        "House cleaning in Napa: downtown, Alta Heights, Browns Valley and Silverado. Guest turnovers and second homes on short windows. Free quote by text.",
-      h1: "House cleaning in Napa",
-      lead: "A town where a lot of houses have guests in them. Turnover cleaning is a different job from keeping a family home tidy.",
-      angle: [
-        {
-          title: "Turnovers run on a clock",
-          body: "Between a check-out and the next check-in there is often a single afternoon, and the standard is first impression rather than maintenance: linens, bathrooms, kitchen reset, glassware, every surface a guest will touch in the first ten minutes. We take turnover work only when the window is genuinely long enough, and we say so when it is not, because a rushed turnover shows up in a review.",
-        },
-        {
-          title: "Second homes need a different rhythm",
-          body: "Plenty of Napa houses sit empty for weeks and then host for a weekend. Cleaning weekly makes no sense; cleaning the day before arrival makes all of it. We work to the calendar instead of a fixed interval, which means a dust-and-refresh before you arrive and a proper clean after you leave.",
-        },
-        {
-          title: "Downtown houses are old and detailed",
-          body: "Old Town and the streets around downtown have Victorians and Craftsman homes with original floors, trim and tile. Those get products matched to the finish, not whatever is fastest.",
-        },
-      ],
-      localNotes: [
-        "Turnover cleans accepted only when the window is genuinely long enough",
-        "Pre-arrival refresh and post-stay clean scheduled around your calendar for second homes",
-        "Glassware, linens and first-impression surfaces prioritised on guest turnovers",
-        "Original floors and tile downtown matched with the right products",
-        "Coverage across 94558 and 94559",
-      ],
-      faq: [
-        {
-          q: "Can you do turnovers between guests?",
-          a: "Yes. Tell us the window between check-out and check-in and we will tell you honestly whether it is enough time. We would rather decline than rush one.",
-        },
-        {
-          q: "Our house sits empty for weeks. What makes sense?",
-          a: "Working to your calendar rather than a fixed interval. A dust-and-refresh the day before you arrive and a proper clean after you leave beats paying for weekly visits to an empty house.",
-        },
-        {
-          q: "Do you travel to Napa from Contra Costa?",
-          a: "Yes, scheduled alongside our Vallejo and Benicia work. No travel surcharge; the flat price covers it.",
+          a: "No. The flat price includes getting there, and we schedule Vallejo alongside our Benicia work.",
         },
       ],
     },
@@ -1161,7 +1104,7 @@ export const cities: City[] = [
 /**
  * Agrupamento por região, usado na seção de áreas atendidas.
  *
- * Com 19 cidades, uma grade de cards vira um muro. Agrupar por região deixa a
+ * Com 18 cidades, uma grade de cards vira um muro. Agrupar por região deixa a
  * seção calma e ainda ajuda o visitante a se localizar mais rápido do que uma
  * lista alfabética.
  *
@@ -1177,7 +1120,7 @@ export const cityRegions: { label: string; slugs: string[] }[] = [
   { label: "San Ramon Valley", slugs: ["danville", "alamo", "san-ramon"] },
   { label: "East Contra Costa", slugs: ["pittsburg", "bay-point"] },
   { label: "Alameda & San Francisco", slugs: ["oakland", "berkeley", "san-francisco"] },
-  { label: "Solano & Napa", slugs: ["benicia", "vallejo", "napa"] },
+  { label: "Solano", slugs: ["benicia", "vallejo"] },
 ];
 
 export function getCity(slug: string): City | undefined {

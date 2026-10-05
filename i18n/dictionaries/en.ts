@@ -20,7 +20,7 @@ const en = {
     areas: {
       title: "Areas We Serve",
       description:
-        "House cleaning in Concord, Walnut Creek, Danville, Lafayette, Orinda, Oakland, Berkeley, San Francisco, Vallejo, Napa and across Contra Costa. Text us your ZIP code.",
+        "House cleaning in Concord, Walnut Creek, Danville, Lafayette, Orinda, Oakland, Berkeley, San Francisco, Vallejo and across Contra Costa. Text us your ZIP code.",
     },
     about: {
       title: "About Sabrina",
@@ -30,7 +30,7 @@ const en = {
     faq: {
       title: "Frequently Asked Questions",
       description:
-        "Booking, pricing, supplies, access, areas covered and our re-clean guarantee. The questions we get asked most about house cleaning in the Bay Area.",
+        "Booking, pricing, supplies, access and areas covered. The questions we get asked most about house cleaning in the Bay Area.",
     },
     quote: {
       title: "Get a Free Quote",
@@ -78,7 +78,7 @@ const en = {
   },
 
   hero: {
-    eyebrow: "Contra Costa & the East Bay",
+    eyebrow: "Serving the whole Bay Area",
     titleLead: "A home that feels",
     titleAccent: "brand new",
     titleTail: "every week.",
@@ -125,15 +125,11 @@ const en = {
         title: "We tell you what we find",
         body: "A slow drain, a leak starting under the sink, mould behind a window frame. You get a text about it. Finding those early is worth more than the cleaning itself.",
       },
-      redo: {
-        title: "We come back if it's wrong",
-        body: "Point at anything within 24 hours of a visit and we return and redo it at no cost. No forms and no argument. It's simply cheaper for us than losing a client.",
-      },
     },
     storyTitle: "In Sabrina's words",
     photoAlt: "Sabrina, owner of Sabrina Cleaning Service, in a Bay Area home",
     areaTitle: "Where we work",
-    areaBody: "Across Contra Costa and the East Bay, from Orinda and Lafayette through Concord and Walnut Creek out to Pittsburg, plus Oakland, Berkeley, San Francisco and north to Benicia, Vallejo and Napa.",
+    areaBody: "All around the Bay Area, from Orinda and Lafayette through Concord and Walnut Creek out to Pittsburg, plus Oakland, Berkeley, San Francisco and north to Benicia and Vallejo.",
     ctaTitle: "Want to know if we're a fit?",
     ctaBody: "Text us your ZIP code and a sentence about your home. If we're not the right choice, we'll say so.",
   },
@@ -142,7 +138,6 @@ const en = {
     licensedAndInsured: "Licensed & insured",
     backgroundChecked: "Background-checked",
     supplies: "Supplies included",
-    guarantee: "24-hour re-clean guarantee",
   },
 
   services: {
@@ -191,7 +186,7 @@ const en = {
       },
       three: {
         title: "Come home to clean",
-        body: "We arrive on time with our own supplies. Anything not right? Tell us within 24 hours and we come back.",
+        body: "We arrive on time with our own supplies and work through the home room by room.",
       },
     },
   },
@@ -222,18 +217,14 @@ const en = {
         title: "The details nobody asks for",
         body: "Baseboards, switch plates, the base of the faucet, the track in the shower door. That's where a clean home is decided.",
       },
-      guarantee: {
-        title: "24-hour re-clean guarantee",
-        body: "Point at anything you're not happy with within a day of the visit and we come back and redo it, free.",
-      },
     },
   },
 
   areas: {
     eyebrow: "Where we clean",
-    title: "Across Contra Costa, the East Bay and up to Napa",
+    title: "All around the Bay Area",
     subtitle:
-      "From Orinda and Lafayette through Concord and Walnut Creek, out to Pittsburg and the Delta, across the bridge to Oakland, Berkeley and San Francisco, and north to Benicia, Vallejo and Napa.",
+      "From Orinda and Lafayette through Concord and Walnut Creek, out to Pittsburg and the Delta, across the bridge to Oakland, Berkeley and San Francisco, and north to Benicia and Vallejo.",
     note: "Not sure if your street is in range? Text us your ZIP code and we'll answer straight away.",
     viewCity: "House cleaning in",
     allAreas: "See all areas",
@@ -243,7 +234,7 @@ const en = {
   testimonials: {
     eyebrow: "Clients",
     title: "What people say",
-    subtitle: "Reviews from homes across Contra Costa and the East Bay.",
+    subtitle: "Reviews from homes around the Bay Area.",
   },
 
   feedback: {
@@ -314,7 +305,7 @@ const en = {
       },
       areas: {
         q: "Which areas do you cover?",
-        a: "Contra Costa and the East Bay. Concord, Walnut Creek, Clayton Valley, Pacheco, Martinez, Lafayette, Orinda, Moraga, Alamo, Danville, San Ramon, Bay Point and Pittsburg, plus Oakland, Berkeley and San Francisco, and north to Benicia, Vallejo and Napa. If you're just outside that, text us anyway; we can often make it work.",
+        a: "The whole Bay Area. Concord, Walnut Creek, Clayton Valley, Pacheco, Martinez, Lafayette, Orinda, Moraga, Alamo, Danville, San Ramon, Bay Point and Pittsburg, plus Oakland, Berkeley and San Francisco, and north to Benicia and Vallejo. If your city isn't on that list, text us anyway; we can often make it work.",
       },
       home: {
         q: "Do I need to be home during the cleaning?",
@@ -332,10 +323,6 @@ const en = {
         q: "Are your products safe for pets and kids?",
         a: "Yes. We use low-tox, fragrance-free products as our default, precisely because of pets and small children. Tell us about allergies or sensitivities before the first visit and we'll adjust what we bring.",
       },
-      guarantee: {
-        q: "What if I'm not happy with something?",
-        a: "Text us within 24 hours of the visit and point at what's wrong. We come back and redo it at no cost. No forms, no argument.",
-      },
       access: {
         q: "What happens if I need to reschedule?",
         a: "Just text us. With 24 hours' notice there's no fee at all. We'd much rather move a visit than clean a home at a bad moment.",
@@ -348,6 +335,15 @@ const en = {
     body: "Text us your ZIP code and we'll send a flat price back, usually within the hour and always free.",
     imageAlt:
       "Sabrina Cleaning Service illustrated mascot: a smiling cleaner in a black and white uniform holding a feather duster",
+  },
+
+  share: {
+    eyebrow: "Share",
+    title: "Point your camera and open the site",
+    qrAlt: "QR code that opens the Sabrina Cleaning Service website",
+    share: "Share",
+    copy: "Copy link",
+    copied: "Link copied",
   },
 
   quoteForm: {
@@ -405,7 +401,7 @@ const en = {
 
   footer: {
     blurb:
-      "House cleaning across Contra Costa, the East Bay, San Francisco and Napa. Recurring, deep, move-in/move-out and post-construction.",
+      "House cleaning all around the Bay Area. Recurring, deep, move-in/move-out and post-construction.",
     servicesTitle: "Services",
     companyTitle: "Company",
     contactTitle: "Contact",
@@ -468,10 +464,6 @@ const en = {
         scheduling: {
           title: "Scheduling and cancellations",
           body: "You can reschedule or cancel at no cost with at least 24 hours' notice. If we can't get access to the home at the agreed time and can't reach you, we may charge for the visit.",
-        },
-        guarantee: {
-          title: "Re-clean guarantee",
-          body: "If you're not satisfied with part of a cleaning, tell us within 24 hours of the visit and we'll return and redo that area at no cost. The guarantee covers re-cleaning; it isn't a refund policy.",
         },
         liability: {
           title: "Damage and valuables",

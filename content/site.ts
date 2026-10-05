@@ -23,7 +23,7 @@ export const site = {
    * ("Sabrina Cleaning Service") nem no bloco do mapa.
    *
    * Todo o resto que sinaliza os EUA já está feito: hreflang en-US, endereço e
-   * telefone americanos no LocalBusiness, areaServed com as 19 cidades e o
+   * telefone americanos no LocalBusiness, areaServed com as 18 cidades e o
    * conteúdo em inglês. Ver SEO.md, seção 0.
    */
   url: "https://sabrinacleaningservice.com.br",
@@ -72,7 +72,7 @@ export const site = {
     longitude: -122.0311,
     /**
      * Raio em metros. 60 km a partir de Concord cobrem a lista inteira:
-     * Napa ao norte, San Ramon ao sul e São Francisco a oeste.
+     * Vallejo ao norte, San Ramon ao sul e São Francisco a oeste.
      */
     radiusMeters: 60000,
   },

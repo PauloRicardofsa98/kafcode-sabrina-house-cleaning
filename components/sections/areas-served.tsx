@@ -12,7 +12,7 @@ import type { Dictionary } from "@/i18n/types";
 /**
  * Áreas atendidas.
  *
- * São 19 cidades. Uma grade de cards com bairro e CTA em cada uma vira um muro
+ * São 18 cidades. Uma grade de cards com bairro e CTA em cada uma vira um muro
  * exatamente no ponto da página em que o visitante só quer saber se a casa dele
  * entra. Agrupar por região resolve isso: seis colunas curtas, escaneáveis, e a
  * pessoa se localiza mais rápido do que numa lista alfabética.

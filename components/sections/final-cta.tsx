@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { ShareCard } from "@/components/sections/share-card";
 import { Container } from "@/components/ui/container";
 import { MessageIcon, PhoneIcon } from "@/components/ui/icons";
 import { site, smsHref, telHref } from "@/content/site";
@@ -49,6 +50,10 @@ export function FinalCta({ dict }: { dict: Dictionary }) {
               className="object-contain"
             />
           </div>
+        </div>
+
+        <div className="mt-14 max-w-2xl lg:mt-16">
+          <ShareCard dict={dict} />
         </div>
       </Container>
     </section>

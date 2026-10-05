@@ -121,7 +121,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
             <div className="flex flex-col gap-8">
               {/*
-                Sem foto: com 19 cidades, uma imagem crível para cada uma custaria
+                Sem foto: com 18 cidades, uma imagem crível para cada uma custaria
                 mais do que entrega. O que sustenta a página é o texto local.
               */}
               <div className="rounded-[var(--radius-card)] border border-line bg-ivory p-7 lg:sticky lg:top-28">

@@ -16,7 +16,6 @@ export function TrustStrip({ dict }: { dict: Dictionary }) {
     site.claims.licensedAndInsured ? dict.trust.licensedAndInsured : null,
     site.claims.backgroundChecked ? dict.trust.backgroundChecked : null,
     dict.trust.supplies,
-    dict.trust.guarantee,
   ].filter((claim): claim is string => Boolean(claim));
 
   if (claims.length === 0) return null;

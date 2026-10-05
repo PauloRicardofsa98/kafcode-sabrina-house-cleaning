@@ -50,7 +50,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
     dict.about.how.quote,
     dict.about.how.supplies,
     dict.about.how.report,
-    dict.about.how.redo,
   ];
 
   const trail = [
@@ -127,7 +126,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             {dict.about.howTitle}
           </h2>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
             {how.map((item) => (
               <div
                 key={item.title}
@@ -150,7 +149,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 {dict.about.areaTitle}
               </h2>
               <p className="text-lg leading-relaxed text-ink-soft">{dict.about.areaBody}</p>
-              {/* Agrupado por região: 19 chips soltos viram ruído visual. */}
+              {/* Agrupado por região: 18 chips soltos viram ruído visual. */}
               <dl className="mt-2 flex flex-col gap-4">
                 {cityRegions.map((region) => (
                   <div key={region.label} className="flex flex-col gap-1">

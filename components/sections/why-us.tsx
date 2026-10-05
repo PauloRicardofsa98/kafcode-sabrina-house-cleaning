@@ -11,7 +11,6 @@ export function WhyUs({ dict }: { dict: Dictionary }) {
     dict.why.items.safeProducts,
     dict.why.items.onTime,
     dict.why.items.details,
-    dict.why.items.guarantee,
   ];
 
   return (

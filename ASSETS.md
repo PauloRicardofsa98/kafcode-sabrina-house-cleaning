@@ -2,7 +2,7 @@
 
 Lista completa das imagens que o site referencia. **O código já aponta para os caminhos finais**, então tudo o que estiver faltando aparece quebrado até o arquivo existir. Isso é esperado, não é bug.
 
-As páginas de cidade **não têm foto**: são 19 cidades, e gerar uma imagem crível para cada uma custaria mais do que entrega. O que sustenta essas páginas é o texto local.
+As páginas de cidade **não têm foto**: são 18 cidades, e gerar uma imagem crível para cada uma custaria mais do que entrega. O que sustenta essas páginas é o texto local.
 
 Cada entrada tem nome, caminho exato, dimensões e um **prompt autossuficiente** pronto para colar no ChatGPT. Os prompts repetem estilo, paleta e iluminação de propósito: cada um funciona sozinho, sem você precisar ler o resto do arquivo.
 

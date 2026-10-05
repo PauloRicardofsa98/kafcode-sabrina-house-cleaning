@@ -19,7 +19,7 @@ const pt: Dictionary = {
     areas: {
       title: "Regiões atendidas",
       description:
-        "Limpeza residencial em Concord, Walnut Creek, Danville, Lafayette, Orinda, Oakland, Berkeley, San Francisco, Vallejo, Napa e por toda Contra Costa. Mande seu ZIP code por SMS.",
+        "Limpeza residencial em Concord, Walnut Creek, Danville, Lafayette, Orinda, Oakland, Berkeley, San Francisco, Vallejo e por toda Contra Costa. Mande seu ZIP code por SMS.",
     },
     about: {
       title: "Sobre a Sabrina",
@@ -29,7 +29,7 @@ const pt: Dictionary = {
     faq: {
       title: "Perguntas frequentes",
       description:
-        "Agendamento, preço, produtos, acesso à casa, regiões atendidas e a garantia de refazer. O que mais nos perguntam sobre limpeza na Bay Area.",
+        "Agendamento, preço, produtos, acesso à casa e regiões atendidas. O que mais nos perguntam sobre limpeza na Bay Area.",
     },
     quote: {
       title: "Orçamento grátis",
@@ -75,7 +75,7 @@ const pt: Dictionary = {
   },
 
   hero: {
-    eyebrow: "Contra Costa e o East Bay",
+    eyebrow: "Atendemos toda a Bay Area",
     titleLead: "Uma casa que parece",
     titleAccent: "recém-entregue",
     titleTail: "toda semana.",
@@ -117,15 +117,11 @@ const pt: Dictionary = {
         title: "Contamos o que encontramos",
         body: "Ralo lento, vazamento começando embaixo da pia, mofo atrás do batente da janela. Você recebe um SMS sobre isso. Descobrir cedo vale mais que a limpeza em si.",
       },
-      redo: {
-        title: "Voltamos se ficou ruim",
-        body: "Aponte qualquer coisa em até 24 horas da visita que a gente volta e refaz sem cobrar. Sem formulário e sem discussão. Sai mais barato para nós do que perder um cliente.",
-      },
     },
     storyTitle: "Nas palavras da Sabrina",
     photoAlt: "Sabrina, dona da Sabrina Cleaning Service, em uma casa da Bay Area",
     areaTitle: "Onde atendemos",
-    areaBody: "Por toda Contra Costa e o East Bay, de Orinda e Lafayette passando por Concord e Walnut Creek até Pittsburg, mais Oakland, Berkeley, São Francisco e ao norte Benicia, Vallejo e Napa.",
+    areaBody: "Por toda a Bay Area, de Orinda e Lafayette passando por Concord e Walnut Creek até Pittsburg, mais Oakland, Berkeley, São Francisco e ao norte Benicia e Vallejo.",
     ctaTitle: "Quer saber se combina com você?",
     ctaBody: "Mande seu ZIP code por SMS e uma frase sobre a sua casa. Se não formos a escolha certa, a gente fala.",
   },
@@ -134,7 +130,6 @@ const pt: Dictionary = {
     licensedAndInsured: "Licenciada e segurada",
     backgroundChecked: "Antecedentes verificados",
     supplies: "Produtos inclusos",
-    guarantee: "Garantia de refazer em 24h",
   },
 
   services: {
@@ -183,7 +178,7 @@ const pt: Dictionary = {
       },
       three: {
         title: "Chegue numa casa limpa",
-        body: "Chegamos na hora, com nossos próprios produtos. Ficou algo fora do lugar? Avise em até 24 horas que voltamos.",
+        body: "Chegamos na hora, com nossos próprios produtos, e limpamos a casa cômodo por cômodo.",
       },
     },
   },
@@ -214,18 +209,14 @@ const pt: Dictionary = {
         title: "Os detalhes que ninguém pede",
         body: "Rodapé, espelho de interruptor, a base da torneira, o trilho do box. É aí que se decide se a casa está limpa.",
       },
-      guarantee: {
-        title: "Garantia de refazer em 24 horas",
-        body: "Apontou algo que não ficou bom em até um dia da visita, a gente volta e refaz sem cobrar nada.",
-      },
     },
   },
 
   areas: {
     eyebrow: "Onde atendemos",
-    title: "Contra Costa, o East Bay e até Napa",
+    title: "Por toda a Bay Area",
     subtitle:
-      "De Orinda e Lafayette passando por Concord e Walnut Creek, até Pittsburg e o Delta, cruzando a ponte para Oakland, Berkeley e São Francisco, e ao norte até Benicia, Vallejo e Napa.",
+      "De Orinda e Lafayette passando por Concord e Walnut Creek, até Pittsburg e o Delta, cruzando a ponte para Oakland, Berkeley e São Francisco, e ao norte até Benicia e Vallejo.",
     note: "Não sabe se sua rua entra? Mande o ZIP code por SMS que respondemos na hora.",
     viewCity: "Limpeza residencial em",
     allAreas: "Ver todas as regiões",
@@ -235,7 +226,7 @@ const pt: Dictionary = {
   testimonials: {
     eyebrow: "Clientes",
     title: "O que dizem por aí",
-    subtitle: "Avaliações de casas em Contra Costa e no East Bay.",
+    subtitle: "Avaliações de casas por toda a Bay Area.",
   },
 
   feedback: {
@@ -306,7 +297,7 @@ const pt: Dictionary = {
       },
       areas: {
         q: "Quais regiões vocês atendem?",
-        a: "Contra Costa e o East Bay. Concord, Walnut Creek, Clayton Valley, Pacheco, Martinez, Lafayette, Orinda, Moraga, Alamo, Danville, San Ramon, Bay Point e Pittsburg, mais Oakland, Berkeley e São Francisco, e ao norte Benicia, Vallejo e Napa. Se você estiver logo depois disso, mande mensagem mesmo assim: muitas vezes dá para encaixar.",
+        a: "Toda a Bay Area. Concord, Walnut Creek, Clayton Valley, Pacheco, Martinez, Lafayette, Orinda, Moraga, Alamo, Danville, San Ramon, Bay Point e Pittsburg, mais Oakland, Berkeley e São Francisco, e ao norte Benicia e Vallejo. Se a sua cidade não estiver nessa lista, mande mensagem mesmo assim: muitas vezes dá para encaixar.",
       },
       home: {
         q: "Preciso estar em casa durante a limpeza?",
@@ -324,10 +315,6 @@ const pt: Dictionary = {
         q: "Os produtos são seguros para pets e crianças?",
         a: "São. Usamos produtos de baixa toxicidade e sem perfume como padrão, justamente por causa de pets e crianças pequenas. Conte sobre alergias ou sensibilidades antes da primeira visita que ajustamos o que levamos.",
       },
-      guarantee: {
-        q: "E se eu não gostar de alguma coisa?",
-        a: "Mande um SMS em até 24 horas da visita apontando o que ficou ruim. A gente volta e refaz sem custo. Sem formulário, sem discussão.",
-      },
       access: {
         q: "E se eu precisar remarcar?",
         a: "É só mandar mensagem. Com 24 horas de aviso não há custo nenhum. Preferimos muito mais mudar a data do que limpar a casa numa hora ruim.",
@@ -340,6 +327,15 @@ const pt: Dictionary = {
     body: "Mande seu ZIP code por SMS e devolvemos um preço fechado, normalmente em menos de uma hora e sempre de graça.",
     imageAlt:
       "Mascote ilustrada da Sabrina Cleaning Service: uma profissional sorridente de uniforme preto e branco segurando um espanador",
+  },
+
+  share: {
+    eyebrow: "Compartilhe",
+    title: "Aponte a câmera e abra o site",
+    qrAlt: "QR code que abre o site da Sabrina Cleaning Service",
+    share: "Compartilhar",
+    copy: "Copiar link",
+    copied: "Link copiado",
   },
 
   quoteForm: {
@@ -396,7 +392,7 @@ const pt: Dictionary = {
 
   footer: {
     blurb:
-      "Limpeza residencial em Contra Costa, no East Bay, em São Francisco e em Napa. Recorrente, pesada, mudança e pós-obra.",
+      "Limpeza residencial por toda a Bay Area. Recorrente, pesada, mudança e pós-obra.",
     servicesTitle: "Serviços",
     companyTitle: "Empresa",
     contactTitle: "Contato",
@@ -459,10 +455,6 @@ const pt: Dictionary = {
         scheduling: {
           title: "Agendamento e cancelamento",
           body: "Você pode remarcar ou cancelar sem custo com pelo menos 24 horas de aviso. Se não conseguirmos entrar na casa no horário combinado e não conseguirmos falar com você, a visita pode ser cobrada.",
-        },
-        guarantee: {
-          title: "Garantia de refazer",
-          body: "Se você não gostar de alguma parte da limpeza, avise em até 24 horas da visita que voltamos e refazemos aquela área sem custo. A garantia cobre refazer o serviço; não é política de reembolso.",
         },
         liability: {
           title: "Danos e objetos de valor",

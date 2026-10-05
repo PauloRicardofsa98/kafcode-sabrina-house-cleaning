@@ -66,7 +66,7 @@ i18n/
 content/                     dados do negócio e copy longa
   site.ts                    NAP, telefone, horário, redes, flags. TODOS os placeholders vivem aqui
   services.ts                4 serviços + copy longa das páginas (inglês)
-  cities.ts                  19 cidades + copy longa das páginas (inglês, sem foto)
+  cities.ts                  18 cidades + copy longa das páginas (inglês, sem foto)
   about.ts                   história da Sabrina (vazia até ela escrever)
   reviews.ts                 depoimentos reais (vazio)
   navigation.ts  labels.ts
@@ -236,7 +236,7 @@ Tudo abaixo está com placeholder no código, marcado com `TODO CLIENTE` em `con
 
 | Item | Decisão |
 | --- | --- |
-| **Cidades atendidas** | As 19 da lista manuscrita da cliente, todas com página própria. Se ela atender mais, cada cidade nova é uma página a mais de SEO. |
+| **Cidades atendidas** | As 18 da lista manuscrita da cliente, todas com página própria. Se ela atender mais, cada cidade nova é uma página a mais de SEO. |
 | **Preços** | Nenhum valor exposto. A seção vende a política de "free estimate" em vez de fingir uma tabela. |
 | **Idiomas nas páginas de SEO** | Cidades e serviços individuais só em inglês, por decisão de escopo. |
 
